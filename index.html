@@ -27,6 +27,7 @@
 .bill-50{aspect-ratio:386/185;background-size:207.2539% 336.7568%;background-position:98.3092% 49.7717%;}
 .bill-100{aspect-ratio:381/182;background-size:209.9738% 342.3077%;background-position:2.6253% 96.1451%;}
 .bill-500{aspect-ratio:387/185;background-size:206.7183% 336.7568%;background-position:98.3051% 96.8037%;}
+.section-head p:not(.meta){max-width:68ch}.topic-example{margin-top:14px;border-left:5px solid var(--topic-color);background:#fff8e4}.topic-example h2{font-size:1.05rem;margin:0 0 5px}.topic-example p{max-width:72ch}
 </style>
 </head>
 <body>
@@ -82,35 +83,35 @@ function assetURL(name) {
  return assetURLs.get(key);
 }
 const topics = [
-{id:'grunder',name:'Arbetsmarknaden',icon:'↔',color:'#64b8db',pages:'Introduktion',intro:'På arbetsmarknaden möts människor som söker arbete och arbetsgivare som behöver anställa.',facts:[['Utbud och efterfrågan','Arbetskraftens utbud är de människor som kan och vill arbeta. Efterfrågan kommer från arbetsgivare som behöver personal. När företagens försäljning faller kan efterfrågan på arbetskraft minska.',[["Utbud av arbetskraft", "Den arbetskraft som människor kan och vill erbjuda."], ["Efterfrågan på arbetskraft", "Hur mycket personal arbetsgivare vill anställa."], ["Arbetsgivare", "Den som anställer och betalar lön."]]],['Arbetskraften','Arbetskraften består av sysselsatta och arbetslösa. En heltidsstuderande som varken arbetar eller söker arbete kan stå utanför arbetskraften.',[["Sysselsatt", "Den som arbetar eller är tillfälligt frånvarande från sitt jobb."], ["Arbetslös", "Den som saknar jobb, söker arbete och kan börja arbeta."], ["Utanför arbetskraften", "Den som räknas som varken sysselsatt eller arbetslös."]]],['Arbetslöshet i procent','Dela antalet arbetslösa med antalet personer i arbetskraften och multiplicera med 100. Om 50 av 1 000 personer i arbetskraften är arbetslösa är andelen 5 procent.',[["Andel", "En del av en helhet. Här är de arbetslösa en del av arbetskraften."], ["Procent", "Betyder hundradelar. Fem procent är fem av hundra."]]],['Strukturförändring','Arbetsmarknaden förändras när teknik, handel och efterfrågan ändras. Vissa arbetsuppgifter försvinner, andra tillkommer. En person kan behöva ny utbildning för att kunna ta ett av de nya jobben.',[["Strukturförändring", "En varaktig förändring i vilka jobb och kunskaper som behövs."], ["Automatisering", "När teknik tar över arbetsuppgifter som människor tidigare gjorde."]]]],q:[
+{id:'grunder',name:'Arbetsmarknaden',icon:'↔',color:'#64b8db',pages:'Introduktion',sectionTitle:"Så fungerar arbetsmarknaden",intro:"Arbetsmarknaden är mötet mellan människor som vill jobba och arbetsgivare som behöver personal. Här går vi igenom vilka som räknas till arbetskraften och hur man räknar ut arbetslösheten.",example:["Ett kafé behöver anställa", "Kaféet söker två personer till sommaren. De som söker jobben erbjuder sin arbetskraft. Kaféets behov av två anställda är ett exempel på efterfrågan på arbetskraft."],facts:[['Utbud och efterfrågan','Arbetskraftens utbud är de människor som kan och vill arbeta. Efterfrågan kommer från arbetsgivare som behöver personal. När företagens försäljning faller kan efterfrågan på arbetskraft minska.',[["Utbud av arbetskraft", "Den arbetskraft som människor kan och vill erbjuda."], ["Efterfrågan på arbetskraft", "Hur mycket personal arbetsgivare vill anställa."], ["Arbetsgivare", "Den som anställer och betalar lön."]]],['Arbetskraften','Arbetskraften består av sysselsatta och arbetslösa. En heltidsstuderande som varken arbetar eller söker arbete kan stå utanför arbetskraften.',[["Sysselsatt", "Den som arbetar eller är tillfälligt frånvarande från sitt jobb."], ["Arbetslös", "Den som saknar jobb, söker arbete och kan börja arbeta."], ["Utanför arbetskraften", "Den som räknas som varken sysselsatt eller arbetslös."]]],['Arbetslöshet i procent','Dela antalet arbetslösa med antalet personer i arbetskraften och multiplicera med 100. Om 50 av 1 000 personer i arbetskraften är arbetslösa är andelen 5 procent.',[["Andel", "En del av en helhet. Här är de arbetslösa en del av arbetskraften."], ["Procent", "Betyder hundradelar. Fem procent är fem av hundra."]]],['Strukturförändring','Arbetsmarknaden förändras när teknik, handel och efterfrågan ändras. Vissa arbetsuppgifter försvinner, andra tillkommer. En person kan behöva ny utbildning för att kunna ta ett av de nya jobben.',[["Strukturförändring", "En varaktig förändring i vilka jobb och kunskaper som behövs."], ["Automatisering", "När teknik tar över arbetsuppgifter som människor tidigare gjorde."]]]],q:[
 ['Vilka räknas in i arbetskraften?','Sysselsatta och arbetslösa','Sysselsatta och alla heltidsstuderande','Alla i arbetsför ålder','Enbart sysselsatta med fast anställning','Arbetskraften består av sysselsatta och arbetslösa.','Tänk på vilka som arbetar eller söker arbete.'],
 ['60 personer är arbetslösa i en arbetskraft på 1 200 personer. Hur stor är andelen?','5 procent','6 procent','12 procent','20 procent','60 ÷ 1 200 × 100 = 5 procent.','Dela antalet arbetslösa med arbetskraftens storlek.'],
 ['Vad är ett exempel på en strukturförändring?','Automatisering gör att nya yrkeskunskaper efterfrågas','En butik säljer mindre under en enskild månad','En anställd byter jobb under sommaren','Ett företag tillfälligt minskar arbetstiden under svag konjunktur','Strukturförändringar ändrar varaktigt vilka arbeten och kunskaper som efterfrågas.','Leta efter en varaktig förändring.']]},
-{id:'orsaker',name:'Arbetslöshet',icon:'↓',color:'#edb845',pages:'s. 335–336 · kompendiet',intro:'Konjunktur, förändrade kompetenskrav och tiden det tar att hitta ett jobb kan alla skapa arbetslöshet.',facts:[['Konjunkturarbetslöshet','I en lågkonjunktur minskar ofta konsumtion och investeringar. Företag säljer mindre och kan dra ned på personal eller vänta med att nyanställa.',[["Lågkonjunktur", "En period när ekonomin går svagt och färre köper varor och tjänster."], ["Konsumtion", "Hushållens köp av varor och tjänster."], ["Investering", "Pengar som satsas på något som ska ge nytta framöver, exempelvis en ny maskin."]]],['Strukturarbetslöshet','Lediga jobb och arbetssökande matchar dåligt. Till exempel kan industrijobb försvinna samtidigt som andra branscher söker personer med utbildning eller erfarenhet som de arbetssökande saknar.',[["Matchning", "Hur väl de arbetssökandes kunskaper och erfarenheter passar de lediga jobben."], ["Kompetens", "Kunskaper, färdigheter och erfarenheter som behövs för ett arbete."], ["Bransch", "En grupp företag eller verksamheter som arbetar inom samma område."]]],['Friktionsarbetslöshet','Tillfällig arbetslöshet när det tar tid att hitta och börja ett nytt jobb, exempelvis mellan två anställningar. Den kan förekomma även vid stark konjunktur.',[["Friktionsarbetslöshet", "Tillfällig arbetslöshet medan någon söker eller väntar på att börja ett jobb."], ["Stark konjunktur", "En period när ekonomin går bra och efterfrågan ofta är hög."]]],['Öppen och total arbetslöshet','I kompendiets uppdelning är öppet arbetslösa personer utan arbete som inte deltar i ett arbetsmarknadspolitiskt program. Det bredare måttet i kompendiet lägger till deltagare i sådana program. Vid läsning av statistik behöver du kontrollera vilken definition källan använder.',[["Öppen arbetslöshet", "I kompendiet avses arbetslösa som står utanför arbetsmarknadspolitiska program."], ["Total arbetslöshet", "I kompendiet ingår både öppet arbetslösa och deltagare i sådana program."], ["Arbetsmarknadspolitiskt program", "En organiserad insats som ska hjälpa arbetssökande mot jobb, till exempel genom utbildning eller praktik."]]]],q:[
+{id:'orsaker',name:'Arbetslöshet',icon:'↓',color:'#edb845',pages:'s. 335–336 · kompendiet',sectionTitle:"Varför blir människor arbetslösa?",intro:"Den som saknar jobb kan ha svårt att hitta ett nytt av olika skäl. Ibland finns det få lediga jobb. Ibland finns det jobb, men de kräver annan utbildning. Ibland tar det bara tid för rätt person och arbetsgivare att hitta varandra. Här sorterar vi de olika orsakerna.",example:["Två personer söker jobb", "Nora blir uppsagd när kunderna handlar mindre och flera butiker drar ned på personal. Det är ett exempel på konjunkturarbetslöshet. Leo hittar lediga vårdjobb men saknar utbildningen som krävs. Det är ett exempel på strukturarbetslöshet."],facts:[['Konjunkturarbetslöshet','I en lågkonjunktur minskar ofta konsumtion och investeringar. Företag säljer mindre och kan dra ned på personal eller vänta med att nyanställa.',[["Lågkonjunktur", "En period när ekonomin går svagt och färre köper varor och tjänster."], ["Konsumtion", "Hushållens köp av varor och tjänster."], ["Investering", "Pengar som satsas på något som ska ge nytta framöver, exempelvis en ny maskin."]]],['Strukturarbetslöshet','Lediga jobb och arbetssökande matchar dåligt. Till exempel kan industrijobb försvinna samtidigt som andra branscher söker personer med utbildning eller erfarenhet som de arbetssökande saknar.',[["Matchning", "Hur väl de arbetssökandes kunskaper och erfarenheter passar de lediga jobben."], ["Kompetens", "Kunskaper, färdigheter och erfarenheter som behövs för ett arbete."], ["Bransch", "En grupp företag eller verksamheter som arbetar inom samma område."]]],['Friktionsarbetslöshet','Tillfällig arbetslöshet när det tar tid att hitta och börja ett nytt jobb, exempelvis mellan två anställningar. Den kan förekomma även vid stark konjunktur.',[["Friktionsarbetslöshet", "Tillfällig arbetslöshet medan någon söker eller väntar på att börja ett jobb."], ["Stark konjunktur", "En period när ekonomin går bra och efterfrågan ofta är hög."]]],['Öppen och total arbetslöshet','I kompendiets uppdelning är öppet arbetslösa personer utan arbete som inte deltar i ett arbetsmarknadspolitiskt program. Det bredare måttet i kompendiet lägger till deltagare i sådana program. Vid läsning av statistik behöver du kontrollera vilken definition källan använder.',[["Öppen arbetslöshet", "I kompendiet avses arbetslösa som står utanför arbetsmarknadspolitiska program."], ["Total arbetslöshet", "I kompendiet ingår både öppet arbetslösa och deltagare i sådana program."], ["Arbetsmarknadspolitiskt program", "En organiserad insats som ska hjälpa arbetssökande mot jobb, till exempel genom utbildning eller praktik."]]]],q:[
 ['Företag i många branscher säger upp personal när kunderna köper mindre. Vilken arbetslöshet dominerar?','Konjunkturarbetslöshet','Friktionsarbetslöshet','Strukturarbetslöshet','Säsongsarbetslöshet','En bred efterfrågeminskning hör ihop med konjunkturen.','Orsaken ligger i efterfrågan i hela ekonomin.'],
 ['En ort har lediga vårdjobb men tidigare industriarbetare saknar behörighet. Vilken orsak dominerar?','Strukturarbetslöshet','Konjunkturarbetslöshet','Friktionsarbetslöshet','Säsongsarbetslöshet','Här finns lediga jobb, men kompetensen matchar inte kraven.','Jämför kompetens med vad de lediga jobben kräver.'],
-['Mira söker nytt jobb efter att ha flyttat och börjar på en ny arbetsplats om en månad. Vilken typ passar bäst?','Friktionsarbetslöshet','Strukturarbetslöshet','Konjunkturarbetslöshet','Säsongsarbetslöshet','Det korta glappet uppstår under övergången mellan jobb.','Tänk på tiden som behövs för att hitta ett nytt jobb.'],
+['Mira är arbetslös efter en flytt. Hon har rätt kompetens för jobben på orten, men det tar några veckor att hitta ett nytt jobb. Vilken typ av arbetslöshet beskriver väntetiden?','Friktionsarbetslöshet','Strukturarbetslöshet','Konjunkturarbetslöshet','Säsongsarbetslöshet','Det korta glappet uppstår under övergången mellan jobb.','Tänk på tiden som behövs för att hitta ett nytt jobb.'],
 ['Vad lägger kompendiets mått för total arbetslöshet till utöver öppet arbetslösa?','Deltagare i arbetsmarknadspolitiska program','Samtliga personer utanför arbetskraften','Sysselsatta med deltidsjobb','Samtliga heltidsstuderande','I den uppdelningen räknas även programdeltagare in i det bredare måttet.','Exempel är deltagare i vissa utbildningsprogram.']]},
-{id:'foljder',name:'Konsekvenser',icon:'≋',color:'#ef8263',pages:'TCO-artikeln · s. 335–336',intro:'En persons förlorade arbetsinkomst kan påverka hushållet, företagen och det offentliga.',facts:[['Individen','Inkomsten blir ofta lägre. Vid lång arbetslöshet kan kontaktnät, yrkesvana och självkänsla försvagas, och vägen tillbaka till arbete bli svårare. Effekterna varierar mellan personer.',[["Inkomstbortfall", "Pengar man går miste om när en inkomst minskar eller försvinner."], ["Kontaktnät", "Personer man känner som till exempel kan tipsa om jobb."], ["Yrkesvana", "Praktisk erfarenhet av ett arbete."]]],['Företagen','När många hushåll minskar sina inköp kan företag sälja mindre. Det kan leda till färre investeringar och senarelagda anställningar.',[["Hushåll", "En eller flera personer som bor tillsammans. Även en person som bor ensam kan vara ett hushåll."], ["Försäljning", "Det företaget säljer till sina kunder."], ["Investering", "En satsning som ska ge nytta framöver, till exempel inköp av en maskin."]]],['Samhället','Färre som arbetar kan ge lägre skatteintäkter. Utgifterna för stöd kan samtidigt stiga. Långvarig arbetslöshet riskerar också att fördjupa ekonomiska klyftor.',[["Skatteintäkter", "Pengar som staten, kommunerna och regionerna får in genom skatt."], ["Stödutgifter", "Pengar som det offentliga betalar ut i olika former av stöd."], ["Ekonomiska klyftor", "Skillnader i till exempel inkomst eller förmögenhet mellan människor."]]],['TCO:s resonemang','Artikeln från 2018 beskriver hur lägre konsumtion och kompetensförlust kan ge följder långt efter en lågkonjunktur. När du hänvisar till artikeln i en analys, förklara sambandet med ett konkret exempel.',[["TCO", "En centralorganisation som samlar flera fackförbund."], ["Kompetensförlust", "När kunskaper eller färdigheter försvagas, till exempel om de inte används under lång tid."]]]],q:[
-['Vilken kedja kan förstärka en lågkonjunktur?','Arbetslöshet stiger → hushåll köper mindre → företag säljer mindre','Arbetslöshet stiger → löneinkomster stiger → konsumtionen faller','Arbetslöshet stiger → skatteintäkterna stiger → köpkraften stiger','Arbetslöshet stiger → företagen säljer mer → rekrytering faller','Förlorad inkomst kan sänka konsumtionen och därmed företagens försäljning.','Följ vad som händer med hushållens köpkraft.'],
+{id:'foljder',name:'Konsekvenser',icon:'≋',color:'#ef8263',pages:'TCO-artikeln · s. 335–336',sectionTitle:"Vad händer när människor förlorar jobbet?",intro:"När någon förlorar jobbet påverkas personens egen ekonomi. Om många förlorar jobbet samtidigt kan det också påverka företag och kommuner. Här följer vi hur de olika följderna hänger ihop.",example:["Från förlorad lön till färre beställningar", "När Moa blir arbetslös får hon mindre pengar att röra sig med och köper färre luncher ute. Om många gör likadant kan lunchrestaurangen få färre beställningar. Samtidigt kan kommunen få in mindre skatt från löner."],facts:[['Individen','Inkomsten blir ofta lägre. Vid lång arbetslöshet kan kontaktnät, yrkesvana och självkänsla försvagas, och vägen tillbaka till arbete bli svårare. Effekterna varierar mellan personer.',[["Inkomstbortfall", "Pengar man går miste om när en inkomst minskar eller försvinner."], ["Kontaktnät", "Personer man känner som till exempel kan tipsa om jobb."], ["Yrkesvana", "Praktisk erfarenhet av ett arbete."]]],['Företagen','När många hushåll minskar sina inköp kan företag sälja mindre. Det kan leda till färre investeringar och senarelagda anställningar.',[["Hushåll", "En eller flera personer som bor tillsammans. Även en person som bor ensam kan vara ett hushåll."], ["Försäljning", "Det företaget säljer till sina kunder."], ["Investering", "En satsning som ska ge nytta framöver, till exempel inköp av en maskin."]]],['Samhället','Färre som arbetar kan ge lägre skatteintäkter. Utgifterna för stöd kan samtidigt stiga. Långvarig arbetslöshet riskerar också att fördjupa ekonomiska klyftor.',[["Skatteintäkter", "Pengar som staten, kommunerna och regionerna får in genom skatt."], ["Stödutgifter", "Pengar som det offentliga betalar ut i olika former av stöd."], ["Ekonomiska klyftor", "Skillnader i till exempel inkomst eller förmögenhet mellan människor."]]],['TCO:s resonemang','Artikeln från 2018 beskriver hur lägre konsumtion och kompetensförlust kan ge följder långt efter en lågkonjunktur. När du hänvisar till artikeln i en analys, förklara sambandet med ett konkret exempel.',[["TCO", "En centralorganisation som samlar flera fackförbund."], ["Kompetensförlust", "När kunskaper eller färdigheter försvagas, till exempel om de inte används under lång tid."]]]],q:[
+['Vilken kedja kan förstärka en lågkonjunktur?','Fler blir arbetslösa → hushållen köper mindre → företag säljer mindre och kan dra ned på personal','Fler blir arbetslösa → hushållen köper mindre → företagen säljer mer och nyanställer','Fler blir arbetslösa → löneinkomsterna ökar → hushållen får större köpkraft','Fler blir arbetslösa → hushållen handlar mer → företagen säljer mer och nyanställer','Förlorad inkomst kan sänka konsumtionen och därmed företagens försäljning.','Följ vad som händer med hushållens köpkraft.'],
 ['Varför kan lång arbetslöshet göra det svårare att komma tillbaka?','Yrkesvana och nätverk kan försvagas','Anställningsvillkor i kollektivavtal upphör i hela branschen','Konjunkturen måste alltid försämras ytterligare','Arbetskraften minskar automatiskt med lika många som blir arbetslösa','Lång tid från arbetsplatsen kan påverka kompetens och tillgång till kontakter.','Tänk på erfarenhet och kontakter.'],
 ['Vad kan hända med det offentligas ekonomi vid hög arbetslöshet?','Lägre skatteintäkter och högre utgifter för stöd','Högre skatteintäkter och högre utgifter för stöd','Lägre skatteintäkter och automatiskt lägre stödutgifter','Oförändrade skatteintäkter och lägre stödutgifter','Färre löneinkomster ger mindre skatteintäkter samtidigt som behovet av stöd kan öka.','Jämför inkomster från skatt med behovet av stöd.']]},
-{id:'atgarder',name:'Åtgärder',icon:'↗',color:'#6bbd87',pages:'s. 339–341 · kompendiet',intro:'Vilken åtgärd som passar beror på varför människor är arbetslösa.',facts:[['Vid lågkonjunktur','Staten kan öka offentlig efterfrågan genom exempelvis investeringar. En lägre styrränta kan, om inflationsläget tillåter, på sikt göra lån billigare och stärka efterfrågan. Effekterna kommer med fördröjning.',[["Offentlig efterfrågan", "Det som staten, regionerna och kommunerna köper eller beställer."], ["Styrränta", "Räntan som Riksbanken bestämmer och som påverkar andra räntor, exempelvis bankernas låneräntor."], ["Lån", "Pengar som man får använda nu och betalar tillbaka, oftast med ränta."], ["Investeringar", "Satsningar som ska ge nytta under lång tid, till exempel att bygga en järnväg."], ["Inflation", "När de allmänna priserna stiger så att pengarna räcker till mindre."]]],['När kompetensen inte matchar','Yrkesutbildning, omskolning eller validering av tidigare kunskaper kan hjälpa människor att ta lediga jobb. Det tar tid och utbildningen behöver motsvara arbetsgivarnas krav.',[["Yrkesutbildning", "Utbildning som ger kunskaper och färdigheter för ett visst yrke."], ["Omskolning", "Utbildning för att kunna arbeta inom ett nytt yrke."], ["Validering", "Att bedöma och dokumentera kunskaper och färdigheter man redan har."]]],['Matchning, praktik och stöd','Jobbförmedling kan korta tiden mellan två jobb. Praktik kan ge referenser och erfarenhet. Anställningsstöd kan sänka tröskeln för arbetsgivare att anställa vissa arbetssökande.',[["Jobbförmedling", "Hjälp för arbetssökande och arbetsgivare att hitta varandra."], ["Praktik", "En period på en arbetsplats där man får prova arbetsuppgifter och bygga erfarenhet."], ["Referens", "Någon som kan berätta för en arbetsgivare hur du fungerat på en tidigare arbetsplats."], ["Anställningsstöd", "Ekonomiskt stöd som kan göra det lättare för en arbetsgivare att anställa."]]],['Arbetslöshetsersättning','A-kassan kan mildra inkomstbortfallet för den som har rätt till ersättning. Utbildning och matchning syftar i stället direkt till att förbättra möjligheten att få jobb.',[["Arbetslöshetsersättning", "Pengar som kan ersätta en del av den förlorade inkomsten vid arbetslöshet."], ["A-kassa", "Arbetslöshetskassa som prövar rätten till ersättning och betalar ut den."]]]],q:[
+{id:'atgarder',name:'Åtgärder',icon:'↗',color:'#6bbd87',pages:'s. 339–341 · kompendiet',sectionTitle:"Vad kan minska arbetslösheten?",intro:"Här jämför vi sätt att hjälpa fler till jobb. Vilken åtgärd som passar beror på vad som saknas. När det finns för få jobb kan ekonomin behöva mer efterfrågan. När lediga jobb kräver kunskaper som arbetssökande saknar kan utbildning hjälpa.",example:["Utbildning eller fler beställningar?", "Om företag söker svetsare men få har rätt utbildning kan en svetsutbildning hjälpa. Om byggföretag i stället har för få uppdrag kan ett offentligt byggprojekt ge företagen fler beställningar och på sikt mer arbete."],facts:[['Vid lågkonjunktur','Staten kan öka offentlig efterfrågan genom exempelvis investeringar. En lägre styrränta kan, om inflationsläget tillåter, på sikt göra lån billigare och stärka efterfrågan. Effekterna kommer med fördröjning.',[["Offentlig efterfrågan", "Det som staten, regionerna och kommunerna köper eller beställer."], ["Styrränta", "Räntan som Riksbanken bestämmer och som påverkar andra räntor, exempelvis bankernas låneräntor."], ["Lån", "Pengar som man får använda nu och betalar tillbaka, oftast med ränta."], ["Investeringar", "Satsningar som ska ge nytta under lång tid, till exempel att bygga en järnväg."], ["Inflation", "När de allmänna priserna stiger så att pengarna räcker till mindre."]]],['När kompetensen inte matchar','Yrkesutbildning, omskolning eller validering av tidigare kunskaper kan hjälpa människor att ta lediga jobb. Det tar tid och utbildningen behöver motsvara arbetsgivarnas krav.',[["Yrkesutbildning", "Utbildning som ger kunskaper och färdigheter för ett visst yrke."], ["Omskolning", "Utbildning för att kunna arbeta inom ett nytt yrke."], ["Validering", "Att bedöma och dokumentera kunskaper och färdigheter man redan har."]]],['Matchning, praktik och stöd','Jobbförmedling kan korta tiden mellan två jobb. Praktik kan ge referenser och erfarenhet. Anställningsstöd kan sänka tröskeln för arbetsgivare att anställa vissa arbetssökande.',[["Jobbförmedling", "Hjälp för arbetssökande och arbetsgivare att hitta varandra."], ["Praktik", "En period på en arbetsplats där man får prova arbetsuppgifter och bygga erfarenhet."], ["Referens", "Någon som kan berätta för en arbetsgivare hur du fungerat på en tidigare arbetsplats."], ["Anställningsstöd", "Ekonomiskt stöd som kan göra det lättare för en arbetsgivare att anställa."]]],['Arbetslöshetsersättning','A-kassan kan mildra inkomstbortfallet för den som har rätt till ersättning. Utbildning och matchning syftar i stället direkt till att förbättra möjligheten att få jobb.',[["Arbetslöshetsersättning", "Pengar som kan ersätta en del av den förlorade inkomsten vid arbetslöshet."], ["A-kassa", "Arbetslöshetskassa som prövar rätten till ersättning och betalar ut den."]]]],q:[
 ['Vilken åtgärd passar bäst när arbetssökande saknar yrkeskompetensen för lediga jobb?','Yrkesutbildning inriktad på de lediga jobben','Högre ersättning under tiden som arbetslös','Bred stimulans till hushållens konsumtion','Snabbare sortering av jobbannonser','Utbildning kan ändra själva kompetensmatchningen.','Vilken åtgärd förändrar vad personen kan?'],
 ['Vilken åtgärd kan mest direkt korta ett sökglapp mellan två jobb?','Bättre matchning mellan arbetssökande och arbetsgivare','Flerårig omskolning till ett annat yrke','Bred offentlig investering i infrastruktur','Höjd ersättning vid arbetslöshet','En effektivare matchning gör att befintliga lediga jobb hittas snabbare.','Utgå från att personen redan har rätt kompetens.'],
 ['Hur kan lägre styrränta bidra till lägre konjunkturarbetslöshet?','Billigare lån kan stärka efterfrågan och få företag att anställa','Billigare lån kan direkt ge arbetssökande ny yrkesbehörighet','Lägre ränta får hushållen att konsumera mindre, vilket ökar rekryteringen','Lägre ränta matchar arbetssökande direkt med lediga jobb','Räntekanalen verkar indirekt genom konsumtion och investeringar.','Tänk på hushållens och företagens finansiering.']]},
-{id:'parter',name:'Parterna & avtalen',icon:'◇',color:'#cf91db',pages:'s. 289–292 · Vad gör fackföreningar?',intro:'Arbetstagarsidan och arbetsgivarsidan förhandlar om villkoren i arbetslivet.',facts:[['Fackligt ombud och fackförbund','Ett fackligt ombud företräder medlemmarna lokalt. Fackförbund organiserar medlemmar och förhandlar om deras intressen. Förbund kan tillhöra en centralorganisation, exempelvis LO, TCO eller Saco.',[["Fackligt ombud", "En person som företräder fackets medlemmar lokalt."], ["Fackförbund", "En organisation som företräder arbetstagare och förhandlar om villkor."], ["Facklig centralorganisation", "En organisation som samlar flera fackförbund."]]],['Arbetsgivare och arbetsgivarorganisation','En arbetsgivarorganisation samlar arbetsgivare och företräder dem i bland annat avtalsförhandlingar. En enskild arbetsgivare kan också vara avtalspart.',[["Arbetsgivare", "En person eller organisation som har anställda."], ["Arbetsgivarorganisation", "En organisation som företräder arbetsgivare i exempelvis förhandlingar."], ["Avtalspart", "En person eller organisation som själv ingår ett avtal."]]],['Kollektivavtal','Ett skriftligt avtal mellan en arbetstagarorganisation och en arbetsgivare eller arbetsgivarorganisation. Det kan bland annat reglera löner, arbetstid, tillägg och pensioner.',[["Kollektivavtal", "En gemensam överenskommelse mellan facket och arbetsgivarsidan om villkor på jobbet."], ["Lönetillägg", "Extra ersättning utöver lönen, exempelvis för arbete på kvällar."], ["Tjänstepension", "Pension som arbetsgivaren betalar in enligt avtal."]]],['Avtalsförhandlingar','Parterna lämnar krav och förhandlar om villkoren. På en arbetsplats kan facket också stötta enskilda medlemmar. Skyddsombudet företräder arbetstagare i arbetsmiljöfrågor.',[["Avtalsförhandling", "Ett samtal där parterna försöker komma överens om villkoren i ett avtal."], ["Skyddsombud", "En person som företräder arbetstagarna i arbetsmiljöfrågor."], ["Arbetsmiljö", "De fysiska, organisatoriska och sociala förhållandena på jobbet."]]]],q:[
-['Vilka kan sluta ett kollektivavtal?','En arbetstagarorganisation och en arbetsgivare eller arbetsgivarorganisation','En enskild arbetstagare och en arbetsgivare','Arbetsförmedlingen och en arbetsgivarorganisation','Arbetsdomstolen och ett fackförbund','Ett individuellt avtal mellan anställd och arbetsgivare är ett anställningsavtal.','Tänk på de två parterna i en avtalsförhandling.'],
+{id:'parter',name:'Parterna & avtalen',icon:'◇',color:'#cf91db',pages:'s. 289–292 · Vad gör fackföreningar?',sectionTitle:"Facket, arbetsgivarna och deras avtal",intro:"De två parterna är arbetstagarsidan och arbetsgivarsidan. Arbetstagare är personer som är anställda. Facket kan företräda dem. På den andra sidan finns arbetsgivaren eller en organisation som företräder arbetsgivare. Här lär du dig hur parterna förhandlar om till exempel lön, arbetstid och ersättning.",example:["Ersättning för kvällsarbete", "Ett fackförbund och en arbetsgivarorganisation förhandlar om ersättning för kvällsarbete i butiker. Om de skriver in villkoret i ett kollektivavtal informerar avtalet om vilken ersättning som gäller på arbetsplatser som omfattas."],facts:[['Fackligt ombud och fackförbund','Ett fackligt ombud företräder medlemmarna lokalt. Fackförbund organiserar medlemmar och förhandlar om deras intressen. Förbund kan tillhöra en centralorganisation, exempelvis LO, TCO eller Saco.',[["Fackligt ombud", "En person som företräder fackets medlemmar lokalt."], ["Fackförbund", "En organisation som företräder arbetstagare och förhandlar om villkor."], ["Facklig centralorganisation", "En organisation som samlar flera fackförbund."]]],['Arbetsgivare och arbetsgivarorganisation','En arbetsgivarorganisation samlar arbetsgivare och företräder dem i bland annat avtalsförhandlingar. En enskild arbetsgivare kan också vara avtalspart.',[["Arbetsgivare", "En person eller organisation som har anställda."], ["Arbetsgivarorganisation", "En organisation som företräder arbetsgivare i exempelvis förhandlingar."], ["Avtalspart", "En person eller organisation som själv ingår ett avtal."]]],['Kollektivavtal','Ett skriftligt avtal mellan en arbetstagarorganisation och en arbetsgivare eller arbetsgivarorganisation. Det kan bland annat reglera löner, arbetstid, tillägg och pensioner.',[["Kollektivavtal", "En gemensam överenskommelse mellan facket och arbetsgivarsidan om villkor på jobbet."], ["Lönetillägg", "Extra ersättning utöver lönen, exempelvis för arbete på kvällar."], ["Tjänstepension", "Pension som arbetsgivaren betalar in enligt avtal."]]],['Avtalsförhandlingar','Parterna lämnar krav och förhandlar om villkoren. På en arbetsplats kan facket också stötta enskilda medlemmar. Skyddsombudet företräder arbetstagare i arbetsmiljöfrågor.',[["Avtalsförhandling", "Ett samtal där parterna försöker komma överens om villkoren i ett avtal."], ["Skyddsombud", "En person som företräder arbetstagarna i arbetsmiljöfrågor."], ["Arbetsmiljö", "De fysiska, organisatoriska och sociala förhållandena på jobbet."]]]],q:[
+['Vilka kan sluta ett kollektivavtal?','En arbetstagarorganisation och en arbetsgivare eller arbetsgivarorganisation','En enskild arbetstagare och en arbetsgivare','Arbetsförmedlingen och en arbetsgivarorganisation','Arbetsdomstolen och ett fackförbund','Ett kollektivavtal sluts mellan en arbetstagarorganisation och en arbetsgivare eller arbetsgivarorganisation. Ett anställningsavtal gäller den enskilda anställningen.','Tänk på de två parterna i en avtalsförhandling.'],
 ['Vad gör ett fackligt ombud i första hand?','Företräder medlemmar lokalt på arbetsplatsen','Företräder arbetsgivaren i branschförhandlingar','Avgör arbetstvister som domare','Beslutar om nya arbetsmarknadslagar','Det lokala ombudet företräder fackets medlemmar.','På vilken nivå verkar ombudet?'],
 ['Vilket beskriver bäst relationen mellan fackförbund och en facklig centralorganisation?','Centralorganisationen samlar flera fackförbund','Fackförbundet samlar flera centralorganisationer','Centralorganisationen företräder endast en arbetsplats','Fackförbundet utgör arbetsgivarsidan i förhandlingar','LO, TCO och Saco är exempel på fackliga centralorganisationer.','Centralorganisationen ligger på en övergripande nivå.']]},
-{id:'lagar',name:'Lagar & tvister',icon:'§',color:'#e55c5c',pages:'s. 294–300 · lektionsanteckningar',intro:'Lagar och kollektivavtal samspelar. Här är lagarnas huvudsakliga funktioner.',facts:[['LAS och avslut av anställning','Lagen om anställningsskydd reglerar bland annat uppsägning. Uppsägning från arbetsgivaren ska grunda sig på sakliga skäl, exempelvis arbetsbrist eller förhållanden som hänför sig till arbetstagaren personligen. Vid avsked upphör anställningen utan uppsägningstid och åtgärden förutsätter att arbetstagaren grovt har åsidosatt sina skyldigheter.',[["LAS", "Lagen om anställningsskydd, som bland annat innehåller regler om hur anställningar får avslutas."], ["Sakliga skäl", "Grunder för uppsägning som lagen godtar, exempelvis arbetsbrist."], ["Arbetsbrist", "Skäl som rör verksamheten, till exempel att tjänster försvinner vid en omorganisation."], ["Uppsägningstid", "Tiden från uppsägningen tills anställningen upphör."], ["Avsked", "När en anställning upphör direkt därför att arbetstagaren grovt har åsidosatt sina skyldigheter."]]],['MBL','Medbestämmandelagen reglerar bland annat facklig förhandlingsrätt och arbetsgivares skyldighet att förhandla inför vissa viktigare förändringar.',[["MBL", "Medbestämmandelagen, som reglerar bland annat förhandling mellan fack och arbetsgivare."], ["Förhandlingsrätt", "Rätt att begära förhandling i frågor som lagen omfattar."], ["Förhandlingsskyldighet", "Krav på att förhandla i vissa situationer."]]],['Arbetsmiljö, arbetstid och ledighet','Arbetsmiljölagen handlar om att förebygga ohälsa och olyckor i arbetet. Arbetstidslagen behandlar bland annat arbetstid och vila. Semesterlagen reglerar semesterledighet och semesterlön. Diskrimineringslagen skyddar mot diskriminering bland annat i arbetslivet.',[["Arbetsmiljö", "De förhållanden som påverkar hälsa och säkerhet på jobbet."], ["Arbetstid och vila", "Tiden man arbetar och tiden man har ledigt för återhämtning."], ["Semesterlön", "Den ersättning man får under betald semester."], ["Diskriminering", "Missgynnande som omfattas av diskrimineringslagen, exempelvis i samband med kön eller ålder."]]],['Arbetsdomstolen','Arbetsdomstolen prövar arbetstvister. En del arbetstvister börjar i tingsrätt och kan sedan överklagas till Arbetsdomstolen.',[["Arbetstvist", "En rättslig konflikt om ett anställningsförhållande eller ett kollektivavtal."], ["Tingsrätt", "En allmän domstol som prövar vissa arbetstvister som första instans."], ["Överklaga", "Begära att en högre domstol prövar ett avgörande."]]]],q:[
+{id:'lagar',name:'Lagar & tvister',icon:'§',color:'#e55c5c',pages:'s. 294–300 · lektionsanteckningar',sectionTitle:"Vilka regler gäller på jobbet?",intro:"Här får du se vad olika lagar reglerar, till exempel säkerhet, semester och vad som händer när en anställning ska avslutas. Du får också veta vilken roll facket kan ha inför förändringar och vem som kan pröva en tvist.",example:["En butik ska lägga ned", "Om en butik ska stänga kan arbetsgivaren behöva förhandla med facket inför beslutet. Det regleras i MBL, medbestämmandelagen. Om nedläggningen leder till uppsägningar på grund av arbetsbrist blir LAS, lagen om anställningsskydd, relevant."],facts:[['LAS och avslut av anställning','Lagen om anställningsskydd reglerar bland annat uppsägning. Uppsägning från arbetsgivaren ska grunda sig på sakliga skäl, exempelvis arbetsbrist eller förhållanden som hänför sig till arbetstagaren personligen. Vid avsked upphör anställningen utan uppsägningstid och åtgärden förutsätter att arbetstagaren grovt har åsidosatt sina skyldigheter.',[["LAS", "Lagen om anställningsskydd, som bland annat innehåller regler om hur anställningar får avslutas."], ["Sakliga skäl", "Grunder för uppsägning som lagen godtar, exempelvis arbetsbrist."], ["Arbetsbrist", "Skäl som rör verksamheten, till exempel att tjänster försvinner vid en omorganisation."], ["Uppsägningstid", "Tiden från uppsägningen tills anställningen upphör."], ["Avsked", "När en anställning upphör direkt därför att arbetstagaren grovt har åsidosatt sina skyldigheter."]]],['MBL','Medbestämmandelagen reglerar bland annat facklig förhandlingsrätt och arbetsgivares skyldighet att förhandla inför vissa viktigare förändringar.',[["MBL", "Medbestämmandelagen, som reglerar bland annat förhandling mellan fack och arbetsgivare."], ["Förhandlingsrätt", "Rätt att begära förhandling i frågor som lagen omfattar."], ["Förhandlingsskyldighet", "Krav på att förhandla i vissa situationer."]]],['Arbetsmiljö, arbetstid och ledighet','Arbetsmiljölagen handlar om att förebygga ohälsa och olyckor i arbetet. Arbetstidslagen behandlar bland annat arbetstid och vila. Semesterlagen reglerar semesterledighet och semesterlön. Diskrimineringslagen skyddar mot diskriminering bland annat i arbetslivet.',[["Arbetsmiljö", "De förhållanden som påverkar hälsa och säkerhet på jobbet."], ["Arbetstid och vila", "Tiden man arbetar och tiden man har ledigt för återhämtning."], ["Semesterlön", "Den ersättning man får under betald semester."], ["Diskriminering", "Missgynnande som omfattas av diskrimineringslagen, exempelvis i samband med kön eller ålder."]]],['Arbetsdomstolen','Arbetsdomstolen prövar arbetstvister. En del arbetstvister börjar i tingsrätt och kan sedan överklagas till Arbetsdomstolen.',[["Arbetstvist", "En rättslig konflikt om ett anställningsförhållande eller ett kollektivavtal."], ["Tingsrätt", "En allmän domstol som prövar vissa arbetstvister som första instans."], ["Överklaga", "Begära att en högre domstol prövar ett avgörande."]]]],q:[
 ['Vilken lag hör främst ihop med facklig förhandling inför en viktigare verksamhetsförändring?','MBL','LAS','Arbetstidslagen','Semesterlagen','MBL reglerar bland annat facklig förhandlingsrätt.','Leta efter lagen om medbestämmande.'],
-['Vad kännetecknar avsked?','Anställningen upphör utan uppsägningstid efter ett grovt åsidosättande','Anställningen upphör efter ordinarie uppsägningstid vid arbetsbrist','Anställningen upphör vid det avtalade slutdatumet','Anställningen ändras från heltid till deltid','Avsked och uppsägning har olika förutsättningar och regler för när anställningen upphör.','Tänk på både hur allvarligt beteendet är och uppsägningstiden.'],
+['Vad kännetecknar avsked?','Anställningen upphör utan uppsägningstid efter ett grovt åsidosättande','Anställningen upphör efter ordinarie uppsägningstid vid arbetsbrist','Anställningen upphör vid det avtalade slutdatumet','Anställningen ändras från heltid till deltid','Vid avsked upphör anställningen utan uppsägningstid. Det kräver att arbetstagaren grovt har åsidosatt sina skyldigheter.','Tänk på både hur allvarligt beteendet är och uppsägningstiden.'],
 ['Vilken instans är specialiserad på arbetstvister?','Arbetsdomstolen','Arbetsmiljöverket','Arbetsförmedlingen','Diskrimineringsombudsmannen','Arbetsdomstolen prövar arbetstvister.','Leta efter den dömande instansen.'],
 ['Vilken lag handlar främst om att förebygga arbetsskador och ohälsa på jobbet?','Arbetsmiljölagen','LAS','Semesterlagen','MBL','Arbetsmiljölagen reglerar arbetsmiljöarbetet.','Tänk på var risken ska förebyggas.']]}
 ];
 const cases=[
-['Tre typer av arbetslöshet i samma kommun','En fabrik säger upp folk efter en svag försäljningsperiod. Samtidigt söker vården personal som fabriksarbetarna saknar utbildning för. Sam har precis flyttat till kommunen och söker sitt första jobb där. Förklara vilken typ av arbetslöshet som passar varje situation. Föreslå en åtgärd och motivera den.','Fabrikens tillfälliga efterfrågefall talar för konjunkturarbetslöshet. Vårdens kompetensbrist visar en strukturell obalans. Sams sökperiod kan vara friktionsarbetslöshet, om kompetensen matchar lediga jobb och det främst tar tid att hitta dem. Yrkesutbildning kan lindra den strukturella obalansen, men tar tid och måste anpassas till behörighetskraven.'],
+['Tre typer av arbetslöshet i samma kommun','En fabrik säger upp personal när försäljningen faller under en lågkonjunktur som drabbar flera branscher. Samtidigt söker vården personal som fabriksarbetarna saknar utbildning för. Sam har just flyttat dit, har den utbildning som flera lediga jobb kräver och behöver några veckor för att hitta rätt tjänst. Förklara vilken typ av arbetslöshet som passar varje situation. Välj en av situationerna och föreslå en åtgärd. Förklara hur åtgärden kan påverka just den situationen.','Fabrikens tillfälliga efterfrågefall talar för konjunkturarbetslöshet. Vårdens kompetensbrist visar en strukturell obalans. Sams sökperiod kan vara friktionsarbetslöshet, om kompetensen matchar lediga jobb och det främst tar tid att hitta dem. Yrkesutbildning kan lindra den strukturella obalansen, men tar tid och måste anpassas till behörighetskraven.'],
 ['Vem påverkas när jobben försvinner?','Använd ett exempel från TCO-artikeln. Beskriv en följd för individen, företagen och det offentliga. Visa hur två av följderna hänger ihop och föreslå en åtgärd.','När fler blir arbetslösa får många hushåll mindre att röra sig med. Om de drar ned på inköp kan lokala företag få lägre försäljning och avstå från nyanställningar. Färre löneinkomster kan samtidigt minska skatteintäkterna medan stödutgifterna stiger. Under en lågkonjunktur kan en offentlig investering stärka efterfrågan, men den behöver kunna genomföras i tid.'],
 ['En arbetsplats ska förändras','En arbetsgivare vill lägga ned en avdelning och ändra arbetstiderna på en annan. Förklara vilken roll facket har. Resonera om när MBL, LAS och kollektivavtalet kan bli relevanta.','MBL kan aktualisera förhandling med facket inför viktiga förändringar. Om nedläggningen leder till uppsägningar kan LAS bli relevant genom reglerna om uppsägning på grund av arbetsbrist. Kollektivavtalet kan innehålla villkor om arbetstider och ersättningar. Facket företräder medlemmarna och kan granska hur förändringen påverkar villkoren.']
 ];
@@ -128,6 +129,7 @@ const resources=[
  ['Konsekvenser av arbetslöshet – TCO','assets/konsekvenser.pdf'],['Vad gör fackföreningar?','assets/fack.pdf']
 ];
 const reviewLinks=[
+ ['Riksbanken · Så påverkar styrräntan ekonomin','https://www.riksbank.se/sv/penningpolitik/vad-ar-penningpolitik/vad-ar-styrrantan/'],
  ['Arbetskraftsundersökningarna · SCB','https://www.scb.se/hitta-statistik/statistik-efter-amne/arbetsmarknad/utbud-av-arbetskraft/arbetskraftsundersokningarna-aku/'],
  ['LAS · Sveriges riksdag','https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-198280-om-anstallningsskydd_sfs-1982-80/'],
  ['MBL · Sveriges riksdag','https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-1976580-om-medbestammande-i-arbetslivet_sfs-1976-580/'],
@@ -136,13 +138,13 @@ const reviewLinks=[
 const films=[
  {name:'Klas förklarar – Arbetsmarknaden',file:'arbetsmarknaden.mp4',poster:'arbetsmarknaden.jpg',time:'12 min 43 sek',q:[
   ['Vad beskriver efterfrågan på arbetskraft?','Hur mycket personal arbetsgivarna vill anställa','Hur många personer som vill arbeta','Hur många som deltar i arbetskraften','Hur många elever som planerar att läsa vidare','Efterfrågan kommer från arbetsgivare som behöver personal.','Vilken sida vill anställa?'],
-  ['Varför kan arbetslöshet uppstå samtidigt som det finns lediga jobb?','Jobben kan kräva annan kompetens eller finnas på andra orter','Alla lediga jobb har redan tillsatts','Lediga jobb innebär att arbetskraften alltid krymper','Alla arbetssökande har den kompetens som efterfrågas','Matchningen beror på bland annat kompetens och var arbetet finns.','Jämför vem som söker med vilka jobb som finns.'],
+  ['Varför kan arbetslöshet uppstå samtidigt som det finns lediga jobb?','Jobben kan kräva annan kompetens eller finnas på andra orter','Arbetsgivare anställer alltid lokalt så fort en tjänst blir ledig','Varje ledig tjänst minskar automatiskt arbetskraftens storlek','Alla lediga jobb kräver samma kompetens som de arbetssökande redan har','Matchningen beror på bland annat kompetens och var arbetet finns.','Jämför vem som söker med vilka jobb som finns.'],
   ['Hur kan ny teknik förändra arbetsmarknaden?','Vissa uppgifter försvinner, andra skapas eller förändras','Alla yrken påverkas på samma sätt','Förändringen innebär alltid att efterfrågan på personal sjunker överallt','Den påverkar bara hur länge människor letar jobb','Ny teknik förändrar vilka uppgifter och kunskaper som behövs.','Tänk på vad som händer med arbetsuppgifterna.']
  ]},
  {name:'Film – Arbetslöshet',file:'film-2.mp4',poster:'film-2.jpg',time:'4 min',q:[
-  ['Vad visar kurvan för den svenska arbetslösheten i början av 1990-talet?','Arbetslösheten stiger snabbt','Arbetslösheten sjunker snabbt','Arbetslösheten ligger nästan helt still','Arbetslösheten försvinner tillfälligt','Kurvan stiger kraftigt i början av 1990-talet.','Titta på diagrammet strax efter 1990 på tidsaxeln.'],
-  ['Vad visar robotexemplet om arbetsmarknaden?','Ny teknik kan ändra vilka arbetsuppgifter som utförs av människor','Teknik förändrar bara hur jobbannonser publiceras','Automatisering leder alltid till ökat personalbehov i samma yrke','Automatisering förändrar bara priset på varor','Automatisering kan ersätta vissa uppgifter och samtidigt ändra behovet av andra kunskaper.','Vilka uppgifter kan flyttas från en människa till en maskin?'],
-  ['Hur ska du tolka ett högre värde på arbetslöshetskurvan?','En större andel är arbetslös enligt diagrammets mått','En större andel har ett arbete','Varje arbetslös person har varit utan jobb längre','Arbetsgivarna har automatiskt fler lediga jobb','Diagrammet visar arbetslöshet i procent över tid.','Läs enheten på höjdaxeln.']
+  ['Hur förändras arbetslösheten strax efter 1990 i filmens diagram över Sverige?','Arbetslösheten stiger snabbt','Arbetslösheten sjunker snabbt','Arbetslösheten ligger nästan helt still','Arbetslösheten faller först och återgår sedan till nivån före 1990','Kurvan stiger kraftigt i början av 1990-talet.','Titta på diagrammet strax efter 1990 på tidsaxeln.'],
+  ['Hur kan robotar påverka arbetsuppgifterna enligt exemplet i filmen?','Ny teknik kan ändra vilka arbetsuppgifter som utförs av människor','Teknik förändrar bara hur jobbannonser publiceras','Automatisering leder alltid till ökat personalbehov i samma yrke','Automatisering förändrar bara priset på varor','Automatisering kan ersätta vissa uppgifter och samtidigt ändra behovet av andra kunskaper.','Vilka uppgifter kan flyttas från en människa till en maskin?'],
+  ['Diagrammets lodräta axel visar arbetslöshet i procent. Vad betyder ett högre värde på kurvan?','En större andel är arbetslös enligt diagrammets mått','En större andel har ett arbete','Varje arbetslös person har varit utan jobb längre','Arbetsgivarna har automatiskt fler lediga jobb','Diagrammet visar arbetslöshet i procent över tid.','Läs enheten på höjdaxeln.']
  ]}
 ];
 const groupQuestions=(group,questions)=>questions.map((q,i)=>({id:group+'-'+i,q}));
@@ -233,7 +235,9 @@ function bindQuiz(root,items,onAnswer){
 }
 function topicPage(topic){
  const items=groupQuestions(topic.id,topic.q);
- panel.innerHTML=section(topic.name,topic.intro,topic.pages,topic.color)+cards(topic.facts)
+ const [exampleTitle,exampleText]=topic.example;
+ const example=`<aside class="card topic-example" style="--topic-color:${topic.color}"><h2>Exempel · ${exampleTitle}</h2><p>${exampleText}</p></aside>`;
+ panel.innerHTML=section(topic.sectionTitle,topic.intro,topic.pages,topic.color)+example+cards(topic.facts)
  +`<div class="study-checks" aria-label="Checklista">${['Jag har läst','Jag kan begreppen','Jag kan förklara med ett exempel'].map((label,i)=>`<label><input data-check="${i}" type="checkbox" ${saved.checks[topic.id+'-'+i]?'checked':''}>${label}</label>`).join('')}</div><h2>Testa dig</h2>`
  +quizMarkup(items,true)+`<div class="tools"><a class="play" href="#${topics[topics.indexOf(topic)+1]?.id??'prov'}">Nästa ruta →</a></div>`;
  panel.querySelectorAll('[data-check]').forEach(box=>box.onchange=()=>{saved.checks[topic.id+'-'+box.dataset.check]=box.checked;save();});
@@ -368,17 +372,334 @@ const terms=[...termIndex.values()].sort((a,b)=>a.title.localeCompare(b.title,'s
 const termId=title=>'begrepp-'+encodeURIComponent(title.toLocaleLowerCase('sv'));
 const allQuestions=[...topicQuestions,...filmQuestions,...terms.map(({title})=>({id:termId(title)}))];
 
+const termPrompts={
+ "A-kassa": "Vad heter den organisation som prövar rätten till och betalar ut arbetslöshetsersättning?",
+ "Andel": "Vad kallas en del av en helhet, oavsett om den skrivs som bråk, decimaltal eller procent?",
+ "Anställningsstöd": "Vad kallas ekonomiskt stöd till en arbetsgivare för att underlätta en anställning?",
+ "Arbetsbrist": "Vilket juridiskt begrepp används när uppsägningar beror på verksamheten, till exempel på att tjänster tas bort vid en omorganisation?",
+ "Arbetsdomstolen": "Vilken specialdomstol prövar arbetstvister och kan pröva överklaganden av tingsrättens domar i sådana mål?",
+ "Arbetsgivare": "Vad kallas den person eller organisation som har någon anställd?",
+ "Arbetsgivarorganisation": "Vad kallas en organisation som företräder flera arbetsgivare i förhandlingar?",
+ "Arbetskraften": "Vad kallas gruppen som består av sysselsatta och arbetslösa tillsammans?",
+ "Arbetslös": "Vad kallas en person som saknar arbete, aktivt söker jobb och kan börja arbeta?",
+ "Arbetslöshet i procent": "Vilket mått får du när du delar antalet arbetslösa med antalet personer i arbetskraften och multiplicerar med 100?",
+ "Arbetslöshetsersättning": "Vad kallas pengarna som kan ersätta en del av en persons förlorade arbetsinkomst under arbetslöshet?",
+ "Arbetsmarknadspolitik": "Vad kallas politikområdet som helhet som omfattar offentliga insatser för att få arbetsmarknaden att fungera bättre och hjälpa fler till jobb?",
+ "Arbetsmarknadspolitiskt program": "Vad kallas en organiserad insats där en arbetssökande deltar under en period, till exempel för att få praktik eller utbildning?",
+ "Arbetsmiljö": "Vad kallas de fysiska, organisatoriska och sociala förhållandena på jobbet som påverkar hälsa och säkerhet?",
+ "Arbetstid och vila": "Vilket begreppspar beskriver när en anställd arbetar och när en anställd får tid för återhämtning?",
+ "Arbetstvist": "Vad kallas en rättslig konflikt om ett anställningsförhållande eller ett kollektivavtal?",
+ "Automatisering": "Vad kallas det när maskiner eller datorer tar över uppgifter som människor tidigare gjorde?",
+ "Avsked": "Vad kallas det när arbetsgivaren avslutar en anställning utan uppsägningstid på grund av att arbetstagaren grovt åsidosatt sina skyldigheter?",
+ "Avtalsförhandling": "Vad kallas själva processen där parterna lägger fram förslag och försöker enas om villkoren i ett avtal?",
+ "Avtalspart": "Vad kallas en person eller organisation som själv ingår ett avtal och därmed blir bunden av det?",
+ "Bransch": "Vad kallas gruppen företag som arbetar inom samma verksamhetsområde, till exempel hotellföretag?",
+ "Diskriminering": "Vad kallas själva missgynnandet när en arbetssökande exempelvis väljs bort på grund av sin etniska tillhörighet?",
+ "Diskrimineringslagen": "Vilken lag ger skydd mot missgynnande som har samband med exempelvis kön eller etnisk tillhörighet i arbetslivet?",
+ "Efterfrågan på arbetskraft": "Vilket begrepp beskriver hur mycket personal arbetsgivarna vill anställa?",
+ "Ekonomiska klyftor": "Vad kallas skillnader i inkomst eller förmögenhet mellan grupper i samhället?",
+ "Fackförbund": "Vad kallas en organisation som enskilda arbetstagare kan gå med i för att få sina intressen företrädda?",
+ "Facklig centralorganisation": "Vad kallas typen av organisation som samlar flera fackförbund?",
+ "Fackligt ombud": "Vad kallas personen som företräder fackets medlemmar lokalt i frågor om deras anställningsvillkor?",
+ "Friktionsarbetslöshet": "Vilken typ av arbetslöshet uppstår när en arbetssökande med rätt kompetens behöver tid för att hitta nästa jobb?",
+ "Förhandlingsrätt": "Vad kallas en parts rätt att begära förhandling i frågor som medbestämmandelagen omfattar?",
+ "Förhandlingsskyldighet": "Vad kallas kravet på en part att förhandla i en situation som lagen omfattar?",
+ "Försäljning": "Vad kallas det när ett företag lämnar över en vara eller tjänst till en kund mot betalning, sett från företagets sida?",
+ "Hushåll": "Vad kallas den ekonomiska enhet som kan bestå av en person som bor ensam eller flera som bor tillsammans?",
+ "Inflation": "Vad kallas det när den allmänna prisnivån stiger så att samma summa pengar räcker till mindre?",
+ "Inkomstbortfall": "Vad kallas den del av inkomsten man förlorar när lönen minskar eller försvinner?",
+ "Investering": "Vad kallas ett företags köp av en maskin när syftet är att den ska ge nytta i verksamheten under flera år?",
+ "Investeringar": "Vad kallas långsiktiga satsningar som att bygga om en järnväg och köpa in nya tåg?",
+ "Jobbförmedling": "Vad kallas tjänsten som hjälper arbetssökande att hitta lediga jobb och arbetsgivare att hitta kandidater?",
+ "Kollektivavtal": "Vad kallas det skriftliga avtal om arbetsvillkor som sluts mellan en arbetstagarorganisation och arbetsgivarsidan?",
+ "Kompetens": "Vad kallas den samlade kunskap, färdighet och erfarenhet som en person kan använda i ett jobb?",
+ "Kompetensförlust": "Vad kallas det när kunskaper och färdigheter försvagas, till exempel för att de inte används under lång tid?",
+ "Konjunkturarbetslöshet": "Vilken typ av arbetslöshet uppstår när den samlade efterfrågan faller och många företag därför behöver mindre personal?",
+ "Konsumtion": "Vad kallas hushållens inköp av varor och tjänster för egen användning?",
+ "Kontaktnät": "Vad kallas de personer du känner och som exempelvis kan tipsa om lediga jobb?",
+ "LAS": "Vilken förkortning används för lagen som bland annat reglerar anställningsskydd, uppsägning och avsked?",
+ "Lågkonjunktur": "Vad kallas en period då den ekonomiska aktiviteten är svag och efterfrågan ofta är låg?",
+ "Lån": "Vad kallas pengar du får använda nu och förbinder dig att betala tillbaka?",
+ "Lönetillägg": "Vad kallas extra ersättning utöver grundlönen, till exempel för kvällsarbete?",
+ "Matchning": "Vad kallas det när arbetssökandes kompetens kopplas ihop med kraven i de lediga jobben?",
+ "MBL": "Vilken förkortning används för lagen om bland annat facklig förhandling och medbestämmande i arbetslivet?",
+ "Offentlig efterfrågan": "Vad kallas den efterfrågan som uppstår när exempelvis städer, regioner eller staten köper varor eller beställer tjänster?",
+ "Omskolning": "Vad kallas det när någon utbildar sig för att kunna byta från sitt nuvarande yrke till ett annat?",
+ "Praktik": "Vad kallas en period då någon får prova arbetsuppgifter på en arbetsplats för att få erfarenhet?",
+ "Procent": "Vilken enhet betyder hundradelar?",
+ "Referens": "Vad kallas en person som en rekryterare kan kontakta för att få veta hur en arbetssökande fungerat i ett tidigare jobb?",
+ "Sakliga skäl": "Vilken samlingsbeteckning använder LAS för de grunder som kan motivera arbetsgivarens uppsägning, där arbetsbrist är ett exempel?",
+ "Semesterlön": "Vad kallas ersättningen du får under betald semester?",
+ "Skatteintäkter": "Vad kallas pengarna som det offentliga får in genom skatt?",
+ "Skyddsombud": "Vad kallas personen som företräder arbetstagarna i frågor om arbetsmiljön?",
+ "Stark konjunktur": "Vad kallas en period då den ekonomiska aktiviteten är hög och efterfrågan ofta är stark?",
+ "Strukturarbetslöshet": "Vilken typ av arbetslöshet uppstår när de lediga jobbens krav varaktigt inte passar de arbetssökandes utbildning eller erfarenhet?",
+ "Strukturförändring": "Vad kallas en varaktig förändring i vilka arbetsuppgifter, yrken eller kunskaper som behövs?",
+ "Styrränta": "Vad heter den ränta som Riksbanken beslutar om för att påverka andra räntor och efterfrågan i ekonomin?",
+ "Stödutgifter": "Vad kallas de pengar som det offentliga betalar ut i form av stöd?",
+ "Sysselsatt": "Vilken status i arbetsmarknadsstatistiken har den som arbetar eller är tillfälligt frånvarande från sitt arbete?",
+ "Säsongsarbetslöshet": "Vilken arbetslöshet uppstår när vissa jobb försvinner efter en återkommande högsäsong, till exempel efter skidsäsongen?",
+ "TCO": "Vilken facklig centralorganisation står bakom kursartikeln från 2018 om arbetslöshetens kostnader?",
+ "Tingsrätt": "Vilken typ av allmän domstol är första instans för vissa arbetstvister?",
+ "Tjänstepension": "Vad kallas den del av pensionen som arbetsgivaren betalar in för den anställde enligt avtal?",
+ "Total arbetslöshet": "Vad heter det bredare mått som i kompendiet räknar både öppet arbetslösa och personer i arbetsmarknadspolitiska program?",
+ "Turordning": "Vad kallas reglerna för i vilken ordning anställda kan sägas upp på grund av arbetsbrist?",
+ "Uppsägningstid": "Vad kallas tiden från att uppsägningen lämnas till att anställningen upphör?",
+ "Utanför arbetskraften": "Vilken grupp tillhör en person som varken räknas som sysselsatt eller arbetslös?",
+ "Utbud av arbetskraft": "Vilket begrepp beskriver den mängd arbetskraft som människor kan och vill erbjuda?",
+ "Validering": "Vad kallas det att bedöma och dokumentera en persons redan förvärvade kunskaper och färdigheter?",
+ "Yrkesutbildning": "Vad kallas utbildning som är inriktad på kunskaper och färdigheter för ett visst yrke?",
+ "Yrkesvana": "Vad kallas den praktiska erfarenhet av ett yrke som byggs upp genom att arbeta i det?",
+ "Öppen arbetslöshet": "Vad heter måttet som i kompendiet omfattar arbetslösa som står utanför arbetsmarknadspolitiska program?",
+ "Överklaga": "Vad kallas det när en part begär att en högre domstol prövar ett avgörande?"
+};
+const termCases={
+ "Arbetsgivare och arbetsgivarorganisation": [
+  "Vilken är skillnaden mellan en arbetsgivare och en arbetsgivarorganisation?",
+  "Arbetsgivaren har anställda. Organisationen företräder arbetsgivare.",
+  "Arbetsgivaren företräder flera branscher. Organisationen företräder enskilda arbetstagare.",
+  "Arbetsgivaren företräder facket. Organisationen prövar arbetstvister.",
+  "Arbetsgivaren beslutar om lagar. Organisationen tillämpar dem på arbetsplatsen."
+ ],
+ "Arbetsmiljö, arbetstid och ledighet": [
+  "Vilka lagar är främst relevanta för skyddsutrustning, dygnsvila och semesterledighet, i den ordningen?",
+  "Arbetsmiljölagen, arbetstidslagen och semesterlagen",
+  "Arbetstidslagen, arbetsmiljölagen och semesterlagen",
+  "Arbetsmiljölagen, semesterlagen och arbetstidslagen",
+  "Semesterlagen, arbetstidslagen och arbetsmiljölagen"
+ ],
+ "Avtalsförhandlingar": [
+  "Vad försöker arbetsmarknadens parter i första hand uppnå när de förhandlar om ett nytt kollektivavtal?",
+  "En gemensam överenskommelse om villkoren",
+  "Ett domstolsbeslut om den gamla överenskommelsen",
+  "En ny lag som riksdagen ska anta",
+  "Ett individuellt anställningsavtal för varje arbetstagare"
+ ],
+ "Fackligt ombud och fackförbund": [
+  "Hur skiljer sig det fackliga ombudets roll från fackförbundets?",
+  "Ombudet företräder medlemmar lokalt. Förbundet organiserar arbetstagare och kan förhandla branschavtal.",
+  "Ombudet företräder arbetsgivaren lokalt. Förbundet utser domare i arbetstvister.",
+  "Ombudet organiserar arbetsgivare. Förbundet prövar rätten till arbetslöshetsersättning.",
+  "Ombudet ansvarar för lagstiftningen. Förbundet företräder offentliga arbetsgivare."
+ ],
+ "Företagen": [
+  "Vilken följd för företag är mest direkt när många hushåll minskar sina inköp?",
+  "Företagens försäljning kan minska.",
+  "Företagen får högre personalkostnader per timme.",
+  "Företagen måste ändra sina kollektivavtal.",
+  "Företagen får fler beställningar från hushållen."
+ ],
+ "Individen": [
+  "Vilken är den mest direkta ekonomiska följden för en person som förlorar sitt jobb?",
+  "Personen förlorar sin löneinkomst.",
+  "Personens tidigare arbetsgivare måste höja priset på sina varor.",
+  "Kommunens totala skatteintäkter ökar.",
+  "Ortens företag får fler beställningar."
+ ],
+ "LAS och avslut av anställning": [
+  "Vilken skillnad mellan uppsägning och avsked stämmer?",
+  "Vid uppsägning gäller normalt uppsägningstid. Vid avsked upphör anställningen utan uppsägningstid.",
+  "Vid avsked gäller längre uppsägningstid än vid uppsägning.",
+  "Vid både uppsägning och avsked upphör anställningen alltid samma dag.",
+  "Vid båda gäller samma uppsägningstid om arbetsgivaren tar initiativet."
+ ],
+ "Matchning, praktik och stöd": [
+  "En arbetssökande vill prova uppgifter på en arbetsplats och få erfarenhet där. Vilken insats passar direkt till syftet?",
+  "Praktik",
+  "Enbart hjälp att söka bland jobbannonser",
+  "Validering av redan förvärvade kunskaper",
+  "Arbetslöshetsersättning"
+ ],
+ "När kompetensen inte matchar": [
+  "En ledig tjänst kräver en yrkesbehörighet som kandidaterna saknar. Vilken åtgärd kan hjälpa dem att uppfylla kravet?",
+  "En yrkesutbildning som leder till behörigheten",
+  "Fler annonser för samma tjänst",
+  "Högre ersättning under arbetslösheten",
+  "Kortare tid för intervjuer"
+ ],
+ "Samhället": [
+  "Vad kan hända med det offentligas ekonomi när många förlorar sina jobb?",
+  "Skatteintäkterna kan minska samtidigt som stödutgifterna ökar.",
+  "Skatteintäkterna kan öka eftersom fler får lön.",
+  "Stödutgifterna ökar alltid lika mycket som skatteintäkterna ökar.",
+  "Stödutgifterna måste falla i samma takt som skatteintäkterna."
+ ],
+ "TCO:s resonemang": [
+  "Vilket samband mellan arbetslöshet och efterfrågan beskrivs i TCO-artikeln?",
+  "Förlorad arbetsinkomst kan minska konsumtionen, vilket kan ge lägre försäljning.",
+  "Lägre konsumtion ökar automatiskt företagens försäljning.",
+  "Arbetslöshet ökar löneinkomsterna så att hushållen handlar mer.",
+  "Arbetslöshet påverkar företagens försäljning enbart genom arbetsgivaravgifterna."
+ ],
+ "Utbud och efterfrågan": [
+  "Vad skiljer utbudet av arbetskraft från efterfrågan på arbetskraft?",
+  "Utbudet kommer från dem som kan och vill arbeta. Efterfrågan kommer från dem som vill anställa.",
+  "Utbudet kommer från dem som vill anställa. Efterfrågan kommer från dem som söker jobb.",
+  "Utbudet är alla lediga jobb. Efterfrågan är alla tillsatta jobb.",
+  "Utbudet är antalet arbetade timmar. Efterfrågan är andelen arbetslösa."
+ ],
+ "Vid lågkonjunktur": [
+  "Vilken åtgärd kan staten använda för att direkt öka efterfrågan på varor och tjänster under en lågkonjunktur?",
+  "Beställa ett offentligt byggprojekt",
+  "Hjälpa arbetssökande att sortera jobbannonser",
+  "Validera arbetssökandes yrkeskunskaper",
+  "Förkorta handläggningen av rekryteringsärenden"
+ ],
+ "Öppen och total arbetslöshet": [
+  "Hur skiljer sig öppen och total arbetslöshet enligt kompendiets definitioner?",
+  "Det totala måttet lägger till deltagarna i arbetsmarknadspolitiska program.",
+  "Det öppna måttet lägger till deltagarna i arbetsmarknadspolitiska program.",
+  "Det totala måttet lägger till alla deltidsarbetande.",
+  "Det öppna måttet omfattar alla som inte söker arbete."
+ ]
+};
+const termChoiceGroups=[
+ [
+  "Konjunkturarbetslöshet",
+  "Strukturarbetslöshet",
+  "Friktionsarbetslöshet",
+  "Säsongsarbetslöshet"
+ ],
+ [
+  "Arbetslös",
+  "Sysselsatt",
+  "Utanför arbetskraften",
+  "Arbetskraften"
+ ],
+ [
+  "Arbetslöshet i procent",
+  "Procent",
+  "Andel",
+  "Total arbetslöshet",
+  "Öppen arbetslöshet"
+ ],
+ [
+  "Öppen arbetslöshet",
+  "Total arbetslöshet",
+  "Arbetskraften",
+  "Utanför arbetskraften"
+ ],
+ [
+  "Utbud av arbetskraft",
+  "Efterfrågan på arbetskraft",
+  "Offentlig efterfrågan",
+  "Arbetskraften"
+ ],
+ [
+  "A-kassa",
+  "Arbetslöshetsersättning",
+  "Anställningsstöd",
+  "Arbetsmarknadspolitiskt program"
+ ],
+ [
+  "Lågkonjunktur",
+  "Stark konjunktur",
+  "Inflation",
+  "Strukturförändring"
+ ],
+ [
+  "Konsumtion",
+  "Investering",
+  "Investeringar",
+  "Försäljning",
+  "Lån"
+ ],
+ [
+  "Styrränta",
+  "Inflation",
+  "Offentlig efterfrågan",
+  "Lån"
+ ],
+ [
+  "Validering",
+  "Omskolning",
+  "Yrkesutbildning",
+  "Matchning",
+  "Praktik",
+  "Jobbförmedling"
+ ],
+ [
+  "Arbetsmarknadspolitik",
+  "Arbetsmarknadspolitiskt program",
+  "Jobbförmedling",
+  "Anställningsstöd"
+ ],
+ [
+  "Kompetens",
+  "Kompetensförlust",
+  "Yrkesvana",
+  "Kontaktnät",
+  "Referens"
+ ],
+ [
+  "Arbetsgivare",
+  "Arbetsgivarorganisation",
+  "Fackförbund",
+  "Facklig centralorganisation"
+ ],
+ [
+  "Fackligt ombud",
+  "Skyddsombud",
+  "Arbetsgivare",
+  "Avtalspart"
+ ],
+ [
+  "Kollektivavtal",
+  "Avtalsförhandling",
+  "Arbetstvist",
+  "Förhandlingsrätt",
+  "Förhandlingsskyldighet"
+ ],
+ [
+  "LAS",
+  "MBL",
+  "Diskrimineringslagen",
+  "Kollektivavtal"
+ ],
+ [
+  "Arbetsdomstolen",
+  "Tingsrätt",
+  "Arbetsgivarorganisation",
+  "Fackförbund"
+ ],
+ [
+  "Avsked",
+  "Arbetsbrist",
+  "Uppsägningstid",
+  "Turordning",
+  "Sakliga skäl"
+ ],
+ [
+  "Lönetillägg",
+  "Semesterlön",
+  "Tjänstepension",
+  "Inkomstbortfall"
+ ],
+ [
+  "Skatteintäkter",
+  "Stödutgifter",
+  "Inkomstbortfall",
+  "Lönetillägg"
+ ],
+ [
+  "TCO",
+  "LO",
+  "Saco",
+  "Svenskt Näringsliv"
+ ]
+];
 function termQuestion(term){
- const equivalents=[
-  ['Investering','Investeringar'],
-  ['Avtalsförhandling','Avtalsförhandlingar']
- ];
- const equivalentTitles=equivalents.find(group=>group.includes(term.title))??[term.title];
- const otherTerms=terms.filter(candidate=>!equivalentTitles.includes(candidate.title));
- const related=shuffle(otherTerms.filter(candidate=>candidate.topic===term.topic));
- const unrelated=shuffle(otherTerms.filter(candidate=>candidate.topic!==term.topic));
- const options=[...related,...unrelated].slice(0,3).map(candidate=>candidate.title);
- return {id:termId(term.title),q:[term.description,term.title,...options,'Begreppet är '+term.title+'.']};
+ const scenario=termCases[term.title];
+ if(scenario){
+  return {id:termId(term.title),q:[...scenario,term.description]};
+ }
+ const equivalents=[['Investering','Investeringar'],['Avtalsförhandling','Avtalsförhandlingar']];
+ const excluded=equivalents.find(group=>group.includes(term.title))??[term.title];
+ const preferred=termChoiceGroups.find(group=>group.includes(term.title))??[];
+ const related=terms.filter(candidate=>candidate.topic===term.topic).map(candidate=>candidate.title);
+ const names=[...shuffle(preferred),...shuffle(related),...shuffle(Object.keys(termPrompts))];
+ const options=[...new Set(names)].filter(name=>!excluded.includes(name)&&!Object.hasOwn(termCases,name)).slice(0,3);
+ return {id:termId(term.title),q:[termPrompts[term.title],term.title,...options,term.description]};
 }
 function startTermQuiz(){
  const start=panel.querySelector('#startTermQuiz');
@@ -420,7 +741,7 @@ function startTermQuiz(){
 }
 
 function termPage(){
-  panel.innerHTML=section('Begrepp','Sök efter ett begrepp och öppna kortet för att se förklaringen.','', '#56b497')+`<div class="tools"><button class="play" id="goToTermQuiz">Gå till begreppsquizet ↓</button></div><div class="tools"><label for="termSearch">Sök bland ${terms.length} begrepp</label><input type="search" id="termSearch" placeholder="Till exempel kollektivavtal"></div><div id="terms" class="blocks"></div><p id="noTerms" hidden>Inga begrepp matchar sökningen.</p><section class="case" aria-labelledby="termQuizHeading"><h2 id="termQuizHeading" tabindex="-1">Begreppsquiz</h2><p>Välj begreppet som passar till förklaringen. Quizet går igenom alla ${terms.length} begrepp, ett i taget.</p><div class="tools"><button class="play" id="startTermQuiz">Starta quizet</button></div><div id="termQuiz"></div></section>`;
+  panel.innerHTML=section('Begrepp','Sök efter ett begrepp och öppna kortet för att se förklaringen.','', '#56b497')+`<div class="tools"><button class="play" id="goToTermQuiz">Gå till begreppsquizet ↓</button></div><div class="tools"><label for="termSearch">Sök bland ${terms.length} begrepp</label><input type="search" id="termSearch" placeholder="Till exempel kollektivavtal"></div><div id="terms" class="blocks"></div><p id="noTerms" hidden>Inga begrepp matchar sökningen.</p><section class="case" aria-labelledby="termQuizHeading"><h2 id="termQuizHeading" tabindex="-1">Begreppsquiz</h2><p>Läs frågan och välj ett svar. Du får öva på alla ${terms.length} begrepp, ett i taget.</p><div class="tools"><button class="play" id="startTermQuiz">Starta quizet</button></div><div id="termQuiz"></div></section>`;
   panel.querySelector('#goToTermQuiz').onclick=()=>{
    const heading=panel.querySelector('#termQuizHeading');
    heading.focus({preventScroll:true});
@@ -485,7 +806,7 @@ function render(){
  window.scrollTo({top:0,behavior:'instant'});
 }
 const slides=[
- ...topics.map(t=>({title:t.name,caption:t.intro,facts:t.facts})),
+ ...topics.map(t=>({title:t.sectionTitle,caption:t.intro,facts:[t.example,...t.facts]})),
  {title:'Från fakta till analys',caption:'Motivera vilken åtgärd som passar och vad som kan begränsa effekten.',facts:[[cases[0][0],cases[0][1]],[cases[1][0],cases[1][1]]]},
  {title:'Inför provet',caption:'Samhällskunskap 2',facts:[['Läs','s. 335–336, 339–341, 289–300, kompendium, TCO-artikeln och lektionsanteckningar'],['Öva','Förklara en orsakskedja, jämför två åtgärder och beskriv vad parterna gör.']]}
 ];
