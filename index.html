@@ -9,7 +9,7 @@
 <style>
 :root{--ink:#19312a;--muted:#52645a;--line:#223932;--paper:#faf7ec;--green:#cfe7d9;--board:#b9ddca;--red:#be302d;--border:#d9dbcc;--white:#fffdf6}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;line-height:1.55}a{color:inherit}button,input,textarea{font:inherit}button{cursor:pointer;color:inherit}button:disabled{cursor:default;opacity:.5}[hidden]{display:none!important}:focus-visible{outline:3px solid #8b2925;outline-offset:3px}.skip{position:absolute;left:1rem;top:-8rem;background:white;padding:1rem;z-index:10}.skip:focus{top:1rem}.header{background:var(--white);border-bottom:1px solid var(--border)}.bar,main,footer{width:min(1100px,calc(100% - 48px));margin:auto}.bar{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;gap:9px;align-items:center;font-weight:900;text-decoration:none}.brand-icon{background:var(--red);color:white;display:inline-grid;place-items:center;width:30px;height:30px;border:1px solid #832825;border-radius:5px;font-size:20px}.bar nav{display:flex;gap:26px}.bar nav a,.home-links a{text-decoration:none;font-weight:700;font-size:.9rem}.bar nav a:hover,.home-links a:hover{text-decoration:underline}.outline,.play{display:inline-flex;justify-content:center;align-items:center;gap:8px;border:1px solid var(--line);padding:.6rem .95rem;border-radius:5px;text-decoration:none;font-weight:800;background:var(--white);font-size:.88rem}.outline:hover{background:#e8f3e9}.play{background:var(--ink);color:white;box-shadow:2px 3px 0 #719788}.play:hover{background:#324f45}.topline{display:flex;justify-content:space-between;align-items:center;gap:14px;margin:24px 0 12px;font-weight:850;font-size:.76rem;letter-spacing:.1em}.topline b{color:var(--red)}.topline a{text-decoration:none;letter-spacing:0;background:#f5e6bd;border:1px solid #e7d5a9;padding:.25rem .6rem;border-radius:30px;white-space:nowrap}.board{display:grid;grid-template-columns:1.05fr repeat(4,minmax(0,1fr)) 1.05fr;grid-template-rows:80px 1fr 1fr 80px;min-height:520px;gap:2px;background:var(--line);border:3px solid var(--line);border-radius:9px;overflow:hidden;box-shadow:0 6px 0 #d7d5c3}.center{grid-area:2/2/4/6;display:grid;place-items:center;text-align:center;background-color:var(--board);background-image:radial-gradient(#37644f23 1px,transparent 1px),radial-gradient(ellipse at center,#e5f3e8 0,transparent 72%);background-size:13px 13px,100% 100%;padding:24px 10px}.center-inner{width:100%}.eyebrow{font-size:.7rem;font-weight:950;letter-spacing:.2em;margin:0 0 12px}.center h1{display:inline-block;max-width:98%;margin:0;background:linear-gradient(180deg,#cf3e34,#b82b2a);color:white;border:5px solid #fffdf4;box-shadow:2px 7px 0 #263d3a55;font-family:"Archivo Black",system-ui,sans-serif;font-size:clamp(1.75rem,5vw,4.25rem);font-weight:1000;letter-spacing:-.055em;line-height:1.02;padding:.16em .25em .25em;transform:rotate(-4deg)}.tagline{font-size:1rem;margin:23px 0 15px;font-weight:650}.decks{display:flex;justify-content:center;gap:24px;margin:0 0 20px}.deck{display:grid;justify-items:center;align-content:center;width:140px;min-height:95px;border:1px solid var(--line);border-radius:7px;text-decoration:none;box-shadow:2px 3px 0 #fff6d8,3px 5px 0 var(--line);transform:rotate(-5deg);line-height:1.25;padding:6px}.deck b{text-transform:uppercase;font-size:.74rem;letter-spacing:.06em}.deck span{font-size:1.75rem;font-weight:950}.deck small{font-size:.72rem}.deck.yellow{background:#f5cd63}.deck.blue{background:#add9e9;transform:rotate(5deg)}.deck:hover{transform:rotate(0)}.tile{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;background:var(--white);border:0;border-top:9px solid var(--accent);text-align:center;text-decoration:none;padding:4px 3px 6px;line-height:1.14;min-width:0}.tile:hover{background:#fff4cc}.tile.side{border-top:0;border-left:10px solid var(--accent)}.tile.bottom{border-top:0;border-bottom:9px solid var(--accent)}.tile.corner{background:var(--accent);border:0}.tile.corner:hover{filter:brightness(1.08)}.tile-icon{font-size:1.6rem;line-height:1.15;font-weight:950}.tile strong{font-size:.79rem;overflow-wrap:anywhere}.tile small{font-size:.64rem;color:#42554a}.tile .done{position:absolute;right:3px;top:1px;color:#07532f;font-size:.8rem}.progress-card{display:flex;align-items:center;gap:14px;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin:24px 0 0}.medal{display:grid;place-items:center;min-width:35px;height:35px;border-radius:50%;background:#f5d078;border:2px solid #bd873d}.progress-copy{display:grid;line-height:1.2;min-width:150px}.progress-copy small{margin-top:3px;color:var(--muted)}progress{width:100%;height:12px;border:0;border-radius:10px;appearance:none;background:#e2e6dc;overflow:hidden}progress::-webkit-progress-bar{background:#e2e6dc}progress::-webkit-progress-value{background:#437f60}progress::-moz-progress-bar{background:#437f60}#score{white-space:nowrap}.home-links{display:flex;gap:22px;flex-wrap:wrap;margin:18px 0 0}.panel{max-width:950px;margin:24px auto 0}.back{text-decoration:none;font-size:.85rem;font-weight:800;display:inline-block;margin:0 0 12px}.section-head{border:1px solid var(--line);border-top:12px solid var(--accent,#6bbd87);border-radius:8px;background:var(--white);padding:24px 30px}.section-head h1{font-size:clamp(2rem,6vw,3.5rem);line-height:1.05;letter-spacing:-.05em;margin:6px 0 12px}.section-head p{margin:0}.meta{color:var(--muted);font-size:.82rem;font-weight:750}.blocks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0}.card,.quiz,.case,.study-checks,.film{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:18px 20px}.card h3,.case h3,.film h3{margin:0 0 5px}.card p,.case p{margin:0}.quiz{margin:12px 0}.quiz fieldset{border:none;padding:0;margin:0;min-inline-size:0}.quiz legend{font-weight:850;padding:0;margin:0 0 9px}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.option{border-radius:5px;border:1px solid #aebbb0;background:var(--white);padding:8px 12px;text-align:left;font-size:.92rem}.option:hover{background:#ebf6ee}.option.right{background:#d7efdf;border-color:#438960}.option.wrong{background:#f8ddd6;border-color:#a84036}.feedback{margin:8px 0 0;font-weight:700}.feedback:empty{display:none}.quiz details{margin:7px 0 0}.study-checks{display:flex;flex-wrap:wrap;gap:12px 24px;margin:15px 0}.study-checks label{display:flex;gap:6px;align-items:center}input[type=checkbox]{accent-color:#267143;width:18px;height:18px}.case,.film{margin:12px 0}.case textarea{display:block;width:100%;min-height:105px;resize:vertical;background:white;border:1px solid #acb8aa;border-radius:5px;margin:8px 0;padding:10px}.case details{margin-top:8px}summary{cursor:pointer;font-weight:800}details p{margin:.5rem 0 0}.film video{display:block;width:100%;max-height:480px;background:#20322c;border-radius:6px;margin:9px 0}.tools{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}.test-result{padding:10px 14px;background:var(--green);border-radius:6px}.timeline{list-style:none;padding:0}.timeline li{padding:0 0 14px 18px;border-left:3px solid #7fae91}.timeline time{font-weight:900;color:#86332e;display:block}.timeline a{font-weight:750;text-underline-offset:.2em}footer{margin-top:30px;border-top:1px solid var(--border);padding:16px 0;color:var(--muted);font-size:.82rem;display:flex;justify-content:space-between;gap:12px}footer a{text-decoration:none;font-weight:800}dialog{width:min(1050px,calc(100% - 22px));max-height:95vh;padding:24px;background:var(--paper);color:var(--ink);border:3px solid var(--ink);border-radius:12px}dialog::backdrop{background:#112823cf}.slide-bar,.slide-controls{display:flex;justify-content:space-between;gap:8px;align-items:center}.slide-bar{font-weight:900}.slide-controls{margin-top:20px}#slideContent h2{font-size:clamp(1.6rem,5vw,3.4rem);line-height:1.1;margin:22px 0 10px}#slideContent .card{font-size:clamp(1rem,2.2vw,1.3rem)}@media(max-width:710px){.bar,main,footer{width:calc(100% - 24px)}.bar{min-height:56px}.bar nav{display:none}.outline{padding:.45rem .6rem}.topline{font-size:.65rem;margin-top:14px}.board{min-height:0;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:auto;gap:2px}.center{grid-area:auto;grid-column:1/-1;grid-row:1;min-height:280px;padding:26px 8px}.tile{grid-area:auto!important;min-height:75px;border:0!important;border-top:6px solid var(--accent)!important}.tile strong{font-size:.72rem}.tile small{display:none}.tile-icon{font-size:1.35rem}.center h1{font-size:clamp(1.5rem,8.2vw,3rem)}.tagline{font-size:.9rem}.deck{min-height:77px;width:121px}.decks{gap:17px}.progress-card{gap:8px;padding:10px}.progress-copy{min-width:105px;font-size:.82rem}.progress-copy small{font-size:.65rem}.progress-card .medal{display:none}.blocks,.choices{grid-template-columns:1fr}.section-head{padding:18px}.home-links{gap:9px 18px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{.header,footer,.back,.tools,.play,.progress-card{display:none!important}body,.card,.section-head{background:#fff;color:#111}main{width:100%}.card{break-inside:avoid}}
 
-@media(min-width:711px){.board .summary-tile{grid-area:2/1/4/2!important}}
+
 .fact-terms{border-top:1px solid var(--border);margin-top:13px;padding-top:10px;font-size:.88rem}.fact-terms summary{color:var(--ink);padding:6px 0}.fact-terms summary:hover{text-decoration:underline}.fact-terms:not([open]) .terms-hide,.fact-terms[open] .terms-show{display:none}.fact-terms[open] dl{padding-top:5px}.fact-terms dl,.fact-terms dd{margin:0}.fact-terms dl>div+div{margin-top:5px}.fact-terms dt{font-weight:800;display:inline}.fact-terms dt:after{content:" – "}.fact-terms dd{display:inline}
 .board-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px}.board-review{background:#f6e4ba}.review-part{margin:12px 0}.review-part ul{margin:.55rem 0 0;padding-left:1.2rem}.review-part li+li{margin-top:.45rem}.review-check{margin:10px 0}.review-check h3{margin:0 0 .4rem}.review-check details{margin-top:.5rem}@media print{.review-part,.review-check{break-inside:avoid}}
 
@@ -32,6 +32,7 @@
 .board .tile.path-tile{padding-inline:6px}.tile-step{display:grid;place-items:center;min-width:23px;height:23px;padding:0 3px;border-radius:50%;background:#172e26;color:white;font-size:.75rem;font-weight:900;margin-bottom:2px}.tile-arrow{position:absolute;right:5px;bottom:4px;color:#436052;font-size:.9rem;font-weight:900}.path-tile .done{top:0;right:5px}.tile.path-finish{background:#f8df9d}.section-head .step-status{font-size:.78rem;font-weight:850;color:#365b4a;margin-bottom:5px}.study-nav{justify-content:space-between}.center .tagline{max-width:52ch;margin-inline:auto}
 @media(max-width:710px){.board .tile-arrow{display:none}.board .tile.path-tile{min-height:84px}.board .tile.path-tile strong{overflow-wrap:normal;hyphens:auto}}
 @media(max-width:420px){.board{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.exam-question h2{font-size:1.05rem;margin:0 0 8px}.exam-question label{display:block;margin-top:12px;font-weight:750}.exam-question .exam-prompt,.exam-solution{white-space:pre-line}.exam-question details[open]{padding:10px 12px;background:#f3f0e5;border-radius:6px}.exam-source{font-size:.85rem}.exam-source a{text-underline-offset:.2em}.exam-status{min-height:1.5em;margin-top:6px}
 </style>
 </head>
 <body>
@@ -49,7 +50,7 @@
    <div class="center-inner">
     <p class="eyebrow">DEN SVENSKA ARBETSMARKNADEN</p>
     <h1>Arbetsmarknaden</h1>
-    <p class="tagline">Börja vid Start och följ rutorna i nummerordning. Läs fakta först, repetera och avsluta med testprovet.</p>
+    <p class="tagline">Börja vid Start och följ rutorna i nummerordning. Läs fakta först, repetera, skriv övningstentan och avsluta med testprovet.</p>
     <div class="decks">
       <a class="deck yellow" href="#slump"><span aria-hidden="true">?</span><b>Chanskort</b><small>Slumpfråga</small></a>
       <a class="deck blue" href="#analys"><span aria-hidden="true">✧</span><b>Analyskort</b><small>Öva på resonemang</small></a>
@@ -155,7 +156,7 @@ const groupQuestions=(group,questions)=>questions.map((q,i)=>({id:group+'-'+i,q}
 const topicQuestions=topics.flatMap(t=>groupQuestions(t.id,t.q));
 const filmQuestions=films.flatMap((f,i)=>groupQuestions('film'+i,f.q));
 const layout=[
- ['start','START','➜','#ead4a7',1,1,'corner','Följ steg 1–11'],
+ ['start','START','➜','#ead4a7',1,1,'corner','Följ steg 1–12'],
  ['grunder','Så fungerar arbetsmarknaden','↔','#64b8db',1,2,'','Fakta'],
  ['orsaker','Varför blir man arbetslös?','↓','#edb845',1,3,'','Fakta'],
  ['foljder','Följder av arbetslöshet','≋','#ef8263',1,4,'','Fakta'],
@@ -166,12 +167,13 @@ const layout=[
  ['begrepp','Begrepp','▤','#56b497',4,6,'corner','Ordkort och quiz'],
  ['analys','Analys','✧','#96bee1',4,5,'bottom','Öva på att resonera'],
  ['repetition','Sista minuten-repetition','↻','#e69b5a',4,4,'bottom','Repetera före testet'],
- ['prov','Testprov','★','#f4c66f',4,3,'bottom','Avsluta här'],
- ['material','Kursmaterial','▥','#b3abd9',4,2,'bottom','PDF och länkar'],
+ ['ovningstenta','Övningstenta','✎','#d5a6c8',4,3,'bottom','Skriv egna svar'],
+ ['prov','Testprov','★','#f4c66f',4,2,'bottom','Avsluta här'],
+ ['material','Kursmaterial','▥','#b3abd9',3,1,'side','PDF och länkar'],
  ['slump','Chanskort','?','#edb845',4,1,'corner','Slumpfråga'],
- ['sammanfattning','Sammanfattning','≡','#83bea0',2,1,'side summary-tile','Hela området']
+ ['sammanfattning','Sammanfattning','≡','#83bea0',2,1,'side','Hela området']
 ];
-const studyPath=layout.slice(1,12);
+const studyPath=layout.slice(1,layout.findIndex(tile=>tile[0]==='prov')+1);
 function shuffle(values){
  const result=[...values];
  for(let i=result.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[result[i],result[j]]=[result[j],result[i]];}
@@ -785,6 +787,162 @@ function termPage(){
    panel.querySelector('#noTerms').hidden=matches>0;
   };
 }
+const examQuestions=[
+ [
+  "1",
+  "1 p",
+  "I vilken arbetsmarknadslag kan man läsa om avsked och uppsägning?",
+  "I lagen om anställningsskydd, förkortad LAS. Uppsägning från arbetsgivarens sida behandlas i 7 § och avsked i 18 §."
+ ],
+ [
+  "2",
+  "3 p",
+  "Vad är det för skillnad på avsked och uppsägning?",
+  "Vid uppsägning fortsätter anställningen under uppsägningstiden. En uppsägning från arbetsgivaren ska som huvudregel ha sakliga skäl, exempelvis arbetsbrist eller förhållanden som rör arbetstagaren personligen. Vid avsked upphör anställningen utan uppsägningstid. Det förutsätter att arbetstagaren grovt åsidosatt sina skyldigheter mot arbetsgivaren."
+ ],
+ [
+  "3",
+  "1 p",
+  "Du kommer till ditt jobb, AB kyssogramexpressen, och får reda på att företaget är sålt till den kuwaitiske shejken Ibn-el Muhammed Kan Betala utan fackets vetskap. Har ditt företag brutit mot någon lag och i sådana fall vilken?",
+  "Lagen som frågan syftar på är medbestämmandelagen (MBL). Om arbetsgivaren beslutar om en viktigare förändring i verksamheten och har förhandlingsskyldighet ska förhandlingen normalt ske före beslutet. Det går inte att avgöra ett lagbrott enbart utifrån att företaget bytt ägare. En ren aktieförsäljning som ägarna beslutar om och ett beslut som arbetsgivaren fattar om att överlåta verksamheten är olika situationer."
+ ],
+ [
+  "4",
+  "1 p",
+  "Om företaget informerat facket och sedan sålt företaget mot fackets vilja. Bröt företaget då mot någon arbetsmarknadslag och i sådana fall vilken?",
+  "Fackets motstånd innebär i sig inget lagbrott. Om MBL kräver förhandling räcker det däremot inte att bara informera facket. Har arbetsgivaren förhandlat enligt reglerna kan ett beslut normalt fattas även om facket säger nej."
+ ],
+ [
+  "5",
+  "1 p",
+  "I samma veva får du reda på att DU varslas om uppsägning men inte din kompis Fritz-Mandolina trots att Fritz-Mandolina började jobba ett år efter dig och inte är en nyckelperson på företaget. Bryts det nu mot någon lag? Vilken i sådana fall?",
+  "LAS turordningsregler kan bli aktuella vid uppsägning på grund av arbetsbrist. Om ni tillhör samma turordningskrets har längre anställningstid normalt företräde, förutsatt att du har tillräckliga kvalifikationer för det arbete som finns kvar. Undantag och kollektivavtal kan påverka ordningen. Ett varsel är en förvarning. Uppgifterna räcker inte för att slå fast att lagen redan har brutits."
+ ],
+ [
+  "7",
+  "4 p",
+  "Vilka är de tre största arbetsgivarorganisationerna i Sverige?",
+  "Tre centrala aktörer som frågan sannolikt syftar på är Svenskt Näringsliv (privat näringsliv), Sveriges Kommuner och Regioner, SKR (kommuner och regioner), samt Arbetsgivarverket (statliga arbetsgivare, främst myndigheter). Det är tre exempel från olika sektorer. En exakt storleksrangordning kräver att man anger hur storlek mäts."
+ ],
+ [
+  "8",
+  "6 p",
+  "Berätta kortfattat i löpande text om en av de stora arbetstagarorganisationerna i Sverige.\n• Hur de är organiserade.\n• Vilka typer av arbetstagare (yrken och branscher) som är med.\n• Vilka uppgifter organisationen, förbunden och de förtroendevalda har.\n• Ge exempel på arbetsplatser och olika förbund som är med i organisationen.",
+  "LO är en centralorganisation som samlar flera fackförbund. Handels organiserar till exempel anställda i butiker och lager, IF Metall organiserar arbetare inom industrin och Kommunal organiserar bland annat undersköterskor på äldreboenden. LO samordnar vissa gemensamma krav och driver frågor som berör förbunden. Fackförbunden förhandlar om kollektivavtal och stöttar medlemmarna. Lokala förtroendevalda företräder medlemmarna på arbetsplatsen, till exempel vid förhandlingar om förändringar på jobbet."
+ ],
+ [
+  "9a",
+  "1 p",
+  "Förklara begreppet solidarisk lönepolitik.",
+  "Idén är bland annat lika lön för lika eller likvärdigt arbete, oberoende av hur lönsamt det enskilda företaget är. Samordnade lönekrav kan också användas för att minska osakliga löneskillnader och stärka grupper med låga löner."
+ ],
+ [
+  "9b",
+  "1 p",
+  "Förklara begreppet fredsplikt.",
+  "När ett kollektivavtal gäller råder fredsplikt i frågor som omfattas av den, till exempel får parterna normalt inte strejka eller använda lockout för att tvinga fram en ändring i det gällande avtalet."
+ ],
+ [
+  "9c",
+  "1 p",
+  "Förklara begreppet vild strejk.",
+  "En vild strejk är ett arbetsstopp som arbetstagare själva inleder utan att deras fackförbund har beslutat om strejken. Ett sådant arbetsstopp kan bryta mot fredsplikten."
+ ],
+ [
+  "9d",
+  "1 p",
+  "Förklara begreppet kollektivavtal.",
+  "Ett skriftligt avtal mellan en arbetsgivare eller arbetsgivarorganisation och en arbetstagarorganisation. Det kan reglera lön, arbetstid, ersättningar och andra villkor."
+ ],
+ [
+  "9e",
+  "1 p",
+  "Förklara begreppet dold arbetslöshet.",
+  "I den här typen av uppgift syftar begreppet ofta på personer som vill arbeta men inte aktivt söker jobb, exempelvis för att de har gett upp hoppet om att hitta ett. De kan därför hamna utanför det vanliga arbetslöshetsmåttet. Termen används på olika sätt, så ange vilken grupp du menar."
+ ],
+ [
+  "9f",
+  "1 p",
+  "Förklara begreppet strukturarbetslöshet.",
+  "Arbetslöshet som uppstår när lediga jobb och arbetssökande inte passar ihop, till exempel när nya jobb kräver en utbildning som de arbetssökande saknar."
+ ],
+ [
+  "9g",
+  "1 p",
+  "Förklara begreppet konjunkturarbetslöshet.",
+  "Arbetslöshet som uppstår när efterfrågan i ekonomin minskar. Företag säljer mindre och minskar därför personalen eller väntar med att nyanställa."
+ ],
+ [
+  "10",
+  "3 p",
+  "Förhandlingar mellan arbetsgivare och arbetstagare sker på olika nivåer, central nivå (organisationsnivå), förbundsnivå och lokal nivå. Förklara skillnaderna.",
+  "På organisationsnivå kan huvudorganisationer samordna frågor som berör flera förbund eller komma överens om gemensamma ramar. På förbundsnivå förhandlar ett fackförbund och en arbetsgivarorganisation typiskt om villkoren i en bransch, exempelvis handeln. Lokalt förhandlar en arbetsgivare och en facklig företrädare om hur villkor tillämpas på arbetsplatsen, exempelvis vid en lokal lönerevision. Exakt vilka frågor som avgörs på varje nivå beror på avtalsområdet."
+ ],
+ [
+  "12",
+  "5 p",
+  "Arbetslösheten är ett gissel. Vilka ekonomiska och sociala kostnader för arbetslösheten med sig?",
+  "Den arbetslöse förlorar arbetsinkomst och kan behöva minska sin konsumtion. Vid hög arbetslöshet blir företagens försäljning ofta svagare, samtidigt som det offentliga kan få lägre skatteintäkter och högre utgifter för stöd. För individen kan en längre tid utan arbete medföra stress, färre sociala kontakter och förlorad yrkesvana. Det kan göra det svårare att hitta ett nytt jobb. Om många drabbas kan ekonomiska och sociala klyftor öka."
+ ],
+ [
+  "13",
+  "3 p",
+  "Om du blir arbetslös kan du få A-kassa. Vad krävs för att få A-kassa?",
+  "Enligt reglerna för nya ersättningsbeslut sedan 1 oktober 2025 ska du bland annat vara minst 20 år, vara inskriven hos Arbetsförmedlingen, stå till arbetsmarknadens förfogande, aktivt söka lämpliga jobb och uppfylla ett inkomstvillkor. Huvudregeln är minst 120 000 kronor totalt under ramtiden (vanligen 12 månader) och minst 11 000 kronor i minst fyra av månaderna. Fyra månader i följd med minst 11 000 kronor kan ge en kortare ersättningsperiod enligt alternativregeln. Medlemstiden påverkar ersättningsnivån. Äldre beslutade ersättningsperioder kan följa tidigare regler."
+ ],
+ [
+  "14",
+  "4 p",
+  "Berätta om två arbetsmarknadspolitiska åtgärder och vilka typer av arbetslöshet som de kan tänkas lösa.",
+  "En arbetsmarknadsutbildning kan minska strukturarbetslöshet genom att ge arbetssökande den kompetens lediga jobb kräver. Exempelvis kan en utbildning i svetsning hjälpa där industrin söker svetsare. Jobbförmedling och bättre matchning kan minska friktionsarbetslöshet genom att hjälpa arbetsgivare och sökande att hitta varandra snabbare. Insatsernas effekt beror bland annat på om det finns verkliga jobbmöjligheter."
+ ],
+ [
+  "15",
+  "Essä · IG, G, VG eller MVG i originalet",
+  "Beskriv de viktigaste förändringarna på den svenska arbetsmarknaden under de senaste 120 åren med avseende på till exempel yrken och näringsgrenar, arbetsförhållanden, arbetstider, maktförhållanden, arbetskraftens sammansättning, drivkrafter, anställningsformer och nya krav på arbetstagarna. Vad har förändrats till det bättre och vad har blivit sämre? Resonera och motivera i löpande form.",
+  "Under 1900-talet flyttade många från jordbruket till industrin. När produktiviteten ökade behövdes färre arbetare för samma produktion. Senare växte tjänstesektorn, bland annat handel, vård och utbildning. Samtidigt har digitalisering och internationell konkurrens förändrat vad företag producerar och vilka yrkeskunskaper som behövs.\n\nFacklig organisering, kollektivavtal och lagstiftning stärkte arbetstagarnas möjligheter att påverka. Jämfört med början av 1900-talet är den normala arbetsveckan kortare, och arbetsmiljöregler och rätt till ledighet ger bättre skydd. Fler kvinnor fick avlönat arbete, bland annat när välfärdstjänsterna växte, men kvinnor och män arbetar fortfarande ofta i olika yrken.\n\nDigital teknik har förenklat arbetsuppgifter och öppnat nya yrken, men den ställer också nya krav på utbildning och fortbildning. Tillsvidareanställning kan ge stabilitet, medan tidsbegränsade uppdrag kan ge flexibilitet men också göra inkomsten mer osäker. Slutsatsen är att tryggheten på många områden har stärkts samtidigt som omställningen kan vara svår för den vars yrkeskunskaper inte längre efterfrågas."
+ ]
+];
+const examSources={
+ las:['LAS · Sveriges riksdag','https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-198280-om-anstallningsskydd_sfs-1982-80/'],
+ mbl:['MBL · Sveriges riksdag','https://data.riksdagen.se/dokument/sfs-1976-580.html'],
+ partners:['Arbetsgivarorganisationer · Medlingsinstitutet','https://mi.se/lonebildning/forhandlingssystemet/arbetsgivarorganisationer'],
+ lo:['LO:s medlemsförbund','https://www.lo.se/bli-medlem'],
+ wages:['LO:s lönepolitik','https://www.lo.se/i-samhallet/samhallet-a-o/lonepolitik'],
+ benefits:['Villkor för ersättning · Sveriges a-kassor','https://www.sverigesakassor.se/sv/sok-ersattning/villkor-for-ersattning/']
+};
+const examReferences={1:'las',2:'las',3:'mbl',4:'mbl',5:'las',7:'partners',8:'lo','9a':'wages','9b':'mbl','9c':'mbl','9d':'mbl',13:'benefits'};
+function examPage(){
+ panel.innerHTML=section('Övningstenta','Skriv dina egna anteckningar eller svar och jämför sedan med lösningsförslaget. Anteckningarna sparas i den här webbläsaren.','Tentamen om svensk arbetsmarknad','#d5a6c8')+
+  '<p class="meta">Numreringen följer PDF:en. Fråga 6 och 11 saknas i originalet. Fråga 9 är uppdelad i sju delfrågor.</p>'+
+  '<p id="examStatus" class="exam-status meta" role="status"></p>'+
+  examQuestions.map(([id,points,prompt,solution])=>{
+   const source=examSources[examReferences[id]];
+   const sourceLink=source?`<p class="exam-source"><a href="${source[1]}" target="_blank" rel="noopener">${source[0]}</a></p>`:'';
+   return `<article class="case exam-question" aria-labelledby="exam-title-${id}">
+    <h2 id="exam-title-${id}">Fråga ${id} <span class="meta">· ${points}</span></h2>
+    <p class="exam-prompt">${prompt}</p>
+    <label for="exam-note-${id}">Egna anteckningar – fråga ${id}</label>
+    <textarea id="exam-note-${id}" data-exam-note="${id}" rows="${id==='15'?8:3}"></textarea>
+    <details class="fact-terms"><summary><span class="terms-show">Visa lösningsförslag</span><span class="terms-hide">Dölj lösningsförslag</span></summary><p class="exam-solution">${solution}</p>${sourceLink}</details>
+   </article>`;
+  }).join('');
+ const status=panel.querySelector('#examStatus');
+ for(const note of panel.querySelectorAll('[data-exam-note]')){
+  const key='ovningstenta-'+note.dataset.examNote;
+  note.value=saved.notes[key]??'';
+  note.oninput=()=>{
+   saved.notes[key]=note.value;
+   try{
+    localStorage.setItem(storeKey,JSON.stringify(saved));
+    status.textContent='';
+   }catch{
+    status.textContent='Webbläsaren kunde inte spara anteckningarna. Kopiera dem innan du stänger sidan.';
+   }
+  };
+ }
+}
+
 function simplePage(route){
  if(route==='analys'){
   panel.innerHTML=section('Analyskort','Använd kursens begrepp och ett exempel. Förklara sambanden och motivera din slutsats. Svaren sparas i den här webbläsaren.','', '#96bee1')
@@ -823,6 +981,7 @@ function render(){
   else if(route==='film')filmPage();
   else if(route==='slump')randomPage();
   else if(route==='begrepp')termPage();
+  else if(route==='ovningstenta')examPage();
   else simplePage(route);
   showStudyStep(route);
   const heading=panel.querySelector('h1');
