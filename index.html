@@ -39,7 +39,7 @@
 <a class="skip" href="#main">Hoppa till innehållet</a>
 <header class="header">
  <div class="bar"><a class="brand" href="#start"><span class="brand-icon" aria-hidden="true">↗</span> Arbetsmarknaden</a>
- <nav aria-label="Huvudmeny"><a href="#start">Spelplan</a><a href="#prov">Testprov</a></nav>
+ <nav aria-label="Huvudmeny"><a href="#start">Spelplan</a><a href="#prov">Begreppsquiz</a></nav>
  <button class="outline" id="slides">▣ <span>Presentationsläge</span></button></div>
 </header>
 <main id="main">
@@ -50,7 +50,7 @@
    <div class="center-inner">
     <p class="eyebrow">DEN SVENSKA ARBETSMARKNADEN</p>
     <h1>Arbetsmarknaden</h1>
-    <p class="tagline">Börja vid Start och följ rutorna i nummerordning. Läs fakta först, repetera, skriv övningstentan och avsluta med testprovet.</p>
+    <p class="tagline">Börja vid Start och följ rutorna i nummerordning. Läs fakta först, repetera, skriv övningstentan och avsluta med begreppsquizet.</p>
     <div class="decks">
       <a class="deck yellow" href="#slump"><span aria-hidden="true">?</span><b>Chanskort</b><small>Slumpfråga</small></a>
       <a class="deck blue" href="#analys"><span aria-hidden="true">✧</span><b>Analyskort</b><small>Öva på resonemang</small></a>
@@ -168,7 +168,7 @@ const layout=[
  ['analys','Analys','✧','#96bee1',4,5,'bottom','Öva på att resonera'],
  ['repetition','Sista minuten-repetition','↻','#e69b5a',4,4,'bottom','Repetera före testet'],
  ['ovningstenta','Övningstenta','✎','#d5a6c8',4,3,'bottom','Skriv egna svar'],
- ['prov','Testprov','★','#f4c66f',4,2,'bottom','Avsluta här'],
+ ['prov','Begreppsquiz','★','#f4c66f',4,2,'bottom','Avsluta här'],
  ['material','Kursmaterial','▥','#b3abd9',3,1,'side','PDF och länkar'],
  ['slump','Chanskort','?','#edb845',4,1,'corner','Slumpfråga'],
  ['sammanfattning','Sammanfattning','≡','#83bea0',2,1,'side','Hela området']
@@ -270,44 +270,6 @@ function topicPage(topic){
  panel.querySelectorAll('[data-check]').forEach(box=>box.onchange=()=>{saved.checks[topic.id+'-'+box.dataset.check]=box.checked;save();});
  bindQuiz(panel,items);
 }
-function testPage(){
- panel.innerHTML=section('Testprov','Båda lägena täcker alla sex faktarutor. Du får direkt rättning och tränar sedan vidare på frågorna du missade.','', '#f4c66f')
- +`<div class="tools"><button class="play" id="easy">Med ledtrådar</button><button class="outline" id="hard">Utan ledtrådar</button></div><div id="testArea"></div>`;
- function start(hints){
-  const area=panel.querySelector('#testArea');
-  const items=shuffle(topicQuestions);
-  let errors=new Set();
-  let firstAttempt=true;
-  let originalScore=0;
-  function run(round){
-   const title=firstAttempt?'Testprov':'Omtest · dina missade frågor';
-   area.innerHTML=`<h2>${title}</h2><p class="test-result" id="roundResult" aria-live="polite">0 av ${round.length} besvarade</p>`+quizMarkup(round,hints);
-   const result=area.querySelector('#roundResult');
-   let done=0;
-   let correctCount=0;
-   errors=new Set();
-   bindQuiz(area,round,(id,correct)=>{
-    done++;
-    if(correct)correctCount++;else errors.add(id);
-    result.textContent=`${done} av ${round.length} besvarade · ${correctCount} rätt`;
-    if(done!==round.length)return;
-    if(firstAttempt) originalScore=correctCount;
-    firstAttempt=false;
-    if(errors.size){
-     const retry=round.filter(item=>errors.has(item.id));
-     result.textContent+=` · Visar rättningen i fyra sekunder före omtest med ${retry.length} frågor.`;
-     window.setTimeout(()=>{if(area.isConnected&&result.isConnected){run(retry);area.scrollIntoView();}},4000);
-    }else{
-     area.insertAdjacentHTML('afterbegin',`<p class="test-result">Klart! Du fick ${originalScore} av ${items.length} rätt på första försöket och har nu svarat rätt på alla frågor.</p>`);
-     area.scrollIntoView();
-    }
-   });
-  }
-  run(items);
- }
- panel.querySelector('#easy').onclick=()=>start(true);
- panel.querySelector('#hard').onclick=()=>start(false);
-}
 function filmPage(){
  panel.innerHTML=section('Filmer','Titta och svara på frågorna under varje film. Dina första rätta svar ger monopolpengar.','', '#a4cfda')
  +films.map((f,i)=>`<article class="film"><h3>${f.name}</h3><p class="meta">${f.time}</p><video controls playsinline preload="none" poster="${assetURL(f.poster)}" aria-label="${f.name}"><source src="${assetURL(f.file)}" type="video/mp4"></video><h4>Filmquiz</h4>${quizMarkup(groupQuestions('film'+i,f.q),true)}</article>`).join('');
@@ -397,7 +359,7 @@ for(const [title,description] of extraTerms){
 }
 const terms=[...termIndex.values()].sort((a,b)=>a.title.localeCompare(b.title,'sv'));
 const termId=title=>'begrepp-'+encodeURIComponent(title.toLocaleLowerCase('sv'));
-const allQuestions=[...topicQuestions,...filmQuestions,...terms.map(({title})=>({id:termId(title)}))];
+
 
 const termPrompts={
  "A-kassa": "Vad heter den organisation som prövar rätten till och betalar ut arbetslöshetsersättning?",
@@ -728,53 +690,82 @@ function termQuestion(term){
  const options=[...new Set(names)].filter(name=>!excluded.includes(name)&&!Object.hasOwn(termCases,name)).slice(0,3);
  return {id:termId(term.title),q:[termPrompts[term.title],term.title,...options,term.description]};
 }
-function startTermQuiz(){
- const start=panel.querySelector('#startTermQuiz');
+const organisationQuestions=[
+ {id:'organisation-arbetsgivare',q:['Vilken organisation företräder arbetsgivare?','Svenskt Näringsliv','LO','Handels','TCO','Svenskt Näringsliv företräder arbetsgivarsidan i det privata näringslivet.']},
+ {id:'organisation-arbetstagare',q:['Vilken organisation är en facklig centralorganisation som samlar flera fackförbund?','LO','Svenskt Näringsliv','Handels','Arbetsgivarverket','LO samlar fackförbund på arbetstagarsidan.']},
+ {id:'organisation-fackforbund',q:['Vilket är ett fackförbund för bland annat anställda i butik och på lager?','Handels','LO','Svenskt Näringsliv','SKR','Handels är ett fackförbund som organiserar enskilda arbetstagare.']}
+];
+const allQuestions=[...topicQuestions,...filmQuestions,...terms.map(({title})=>({id:termId(title)})),...organisationQuestions];
+const extraTermAreas={
+ 'Sysselsatt':'grunder','Säsongsarbetslöshet':'orsaker','Arbetsmarknadspolitik':'atgarder',
+ 'Facklig centralorganisation':'parter','Diskrimineringslagen':'lagar','Turordning':'lagar'
+};
+const conceptQuizGroups=topics.flatMap(topic=>{
+ const items=terms.filter(term=>(term.topic??extraTermAreas[term.title]??'grunder')===topic.id)
+  .map(term=>({id:termId(term.title),term}));
+ const chunks=[];
+ for(let offset=0;offset<items.length;offset+=10){
+  chunks.push({id:topic.id+'-'+offset,title:topic.name+(items.length>10?' · del '+(offset/10+1):''),items:items.slice(offset,offset+10)});
+ }
+ return chunks;
+});
+conceptQuizGroups.push({id:'organisationer',title:'Organisationer · arbetsgivare och fack',items:organisationQuestions});
+function conceptQuizPage(){
+ panel.innerHTML=section('Begreppsquiz','Välj ett område. Varje omgång innehåller högst tio klickfrågor med direkt rättning. Frågorna du missar kommer tillbaka i ett omtest.','', '#f4c66f')+
+  '<div class="blocks" id="conceptGroups"></div><section class="case" id="conceptRound" hidden><h2 id="conceptRoundTitle"></h2><div class="tools"><button class="outline" id="startTermQuiz">Börja om området</button><a class="outline" href="#conceptGroups" id="chooseConceptGroup">Välj ett annat område</a></div><div id="termQuiz"></div></section>';
+ const menu=panel.querySelector('#conceptGroups');
+ menu.innerHTML=conceptQuizGroups.map((group,index)=>{
+  const completed=group.items.filter(item=>saved.solved[item.id]).length;
+  return `<article class="card"><h3>${group.title}</h3><p>${group.items.length} frågor · ${completed} tidigare klarade</p><button class="play" data-concept-group="${index}">Starta området →</button></article>`;
+ }).join('');
+ panel.querySelectorAll('[data-concept-group]').forEach(button=>{
+  button.onclick=()=>startTermQuiz(Number(button.dataset.conceptGroup));
+ });
+ panel.querySelector('#chooseConceptGroup').onclick=event=>{
+  event.preventDefault();
+  conceptQuizPage();
+  panel.querySelector('#conceptGroups').scrollIntoView({block:'start'});
+ };
+}
+function startTermQuiz(groupIndex){
+ const group=conceptQuizGroups[groupIndex];
  const area=panel.querySelector('#termQuiz');
- let round=shuffle(terms);
- let position=0;
- let misses=[];
- let firstRound=true;
- let firstScore=0;
- start.textContent='Börja om';
+ panel.querySelector('#conceptRound').hidden=false;
+ panel.querySelector('#conceptRoundTitle').textContent=group.title;
+ panel.querySelector('#startTermQuiz').onclick=()=>startTermQuiz(groupIndex);
+ const questions=group.items;
+ let round=shuffle(questions),position=0,misses=[],firstRound=true,firstScore=0;
  function showQuestion(){
-  const item=termQuestion(round[position]);
+  const entry=round[position];
   const title=firstRound?'Fråga':'Omtest · fråga';
+  const item=entry.term?termQuestion(entry.term):entry;
   area.innerHTML=`<p class="meta" tabindex="-1" data-quiz-position>${title} ${position+1} av ${round.length}</p>`+
-   quizMarkup([item])+`<div class="tools"><button class="play" data-next disabled>${position+1===round.length?'Visa resultat':'Nästa fråga →'}</button></div>`;
+   quizMarkup([item])+`<div class="tools"><button class="play" data-next disabled>${position+1===round.length?'Avsluta omgången':'Nästa fråga →'}</button></div>`;
   area.querySelector('[data-quiz-position]').focus();
   const next=area.querySelector('[data-next]');
   bindQuiz(area,[item],(_,correct)=>{
-   if(correct && firstRound)firstScore++;
-   if(!correct)misses.push(round[position]);
+   if(correct&&firstRound)firstScore++;
+   if(!correct)misses.push(entry);
    next.disabled=false;
   });
   next.onclick=()=>{
    position++;
    if(position<round.length){showQuestion();return;}
-   if(misses.length){
-    round=shuffle(misses);
-    misses=[];
-    position=0;
-    firstRound=false;
-    showQuestion();
-    return;
-   }
-   area.innerHTML=`<p class="test-result" tabindex="-1">Klart! ${firstScore} av ${terms.length} rätt på första försöket. Du har nu svarat rätt på alla begrepp.</p>`;
-   area.firstElementChild.focus();
+   if(misses.length){round=shuffle(misses);misses=[];position=0;firstRound=false;showQuestion();return;}
+   area.innerHTML=`<p class="test-result" tabindex="-1">Området klart! ${firstScore} av ${questions.length} rätt på första försöket. Du har nu svarat rätt på alla frågor i området.</p><button class="play" id="nextConceptGroup">${groupIndex+1<conceptQuizGroups.length?'Nästa område →':'Till områdesvalet →'}</button>`;
+   area.querySelector('#nextConceptGroup').onclick=()=>{
+    if(groupIndex+1<conceptQuizGroups.length)startTermQuiz(groupIndex+1);
+    else conceptQuizPage();
+   };
+   area.querySelector('.test-result').focus();
   };
  }
  showQuestion();
+ panel.querySelector('#conceptRound').scrollIntoView({block:'start'});
 }
 
 function termPage(){
-  panel.innerHTML=section('Begrepp','Sök efter ett begrepp och öppna kortet för att se förklaringen.','', '#56b497')+`<div class="tools"><button class="play" id="goToTermQuiz">Gå till begreppsquizet ↓</button></div><div class="tools"><label for="termSearch">Sök bland ${terms.length} begrepp</label><input type="search" id="termSearch" placeholder="Till exempel kollektivavtal"></div><div id="terms" class="blocks"></div><p id="noTerms" hidden>Inga begrepp matchar sökningen.</p><section class="case" aria-labelledby="termQuizHeading"><h2 id="termQuizHeading" tabindex="-1">Begreppsquiz</h2><p>Läs frågan och välj ett svar. Du får öva på alla ${terms.length} begrepp, ett i taget.</p><div class="tools"><button class="play" id="startTermQuiz">Starta quizet</button></div><div id="termQuiz"></div></section>`;
-  panel.querySelector('#goToTermQuiz').onclick=()=>{
-   const heading=panel.querySelector('#termQuizHeading');
-   heading.focus({preventScroll:true});
-   heading.scrollIntoView({block:'start'});
-  };
-  panel.querySelector('#startTermQuiz').onclick=startTermQuiz;
+  panel.innerHTML=section('Begrepp','Sök efter ett begrepp och öppna kortet för att se förklaringen.','', '#56b497')+`<div class="tools"><a class="play" href="#prov">Gå till begreppsquizet →</a></div><div class="tools"><label for="termSearch">Sök bland ${terms.length} begrepp</label><input type="search" id="termSearch" placeholder="Till exempel kollektivavtal"></div><div id="terms" class="blocks"></div><p id="noTerms" hidden>Inga begrepp matchar sökningen.</p><section class="case"><h2>Testa alla begrepp</h2><p>På sista steget väljer du korta quiz efter område, med direkt rättning och omtest på missade frågor.</p><a class="play" href="#prov">Öppna begreppsquizet →</a></section>`;
   const root=panel.querySelector('#terms');
   root.innerHTML=terms.map(({title,description:desc})=>`<details class="card"><summary>${title}</summary><p>${desc}</p></details>`).join('');
   panel.querySelector('#termSearch').oninput=event=>{
@@ -977,7 +968,7 @@ function render(){
  if(onBoard){panel.innerHTML='';document.title='Arbetsmarknaden';refreshScore();}
  else{
   if(topic)topicPage(topic);
-  else if(route==='prov')testPage();
+  else if(route==='prov')conceptQuizPage();
   else if(route==='film')filmPage();
   else if(route==='slump')randomPage();
   else if(route==='begrepp')termPage();
